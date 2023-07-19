@@ -1,0 +1,7 @@
+{
+  "settings": {
+    "index": {
+      "refresh_interval": "5m"
+    }
+  }
+}

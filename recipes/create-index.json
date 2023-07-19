@@ -1,0 +1,26 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "asciifolding": {
+          "tokenizer": "standard",
+          "filter": ["lowercase", "asciifolding_filter"]
+        }
+      },
+      "filter": {
+        "asciifolding_filter": {
+          "type": "asciifolding",
+          "preserve_original": true
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "analyzer": "asciifolding"
+      }
+    }
+  }
+}
