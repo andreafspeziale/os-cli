@@ -48,9 +48,15 @@ pnpm install @andreafspeziale/os-cli
 
 To tast the CLI very quickly using `npx` or after installing it you can spawn OpenSearch locally by using the `docker-compose` file included in the repository:
 
+- `git clone git@github.com:andreafspeziale/os-cli.git`
+- `cd os-cli`
 - `docker compose up -d`
 - `export OS_CONNECTION_METHOD=localOrProxy`
-- `os-cli i l`
+- `npx @andreafspeziale/os-cli i l` or `os-cli i l`
+
+Like the `docker-compose` file there are also some recipes included in the repository:
+
+- `npx @andreafspeziale/os-cli i cr -i test -f ./recipes/create-index.json` or `os-cli i cr -i test -f ./recipes/create-index.json`
 
 ### Configuration
 
