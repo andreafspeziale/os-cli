@@ -12,11 +12,11 @@
     <a href="https://opensearch.org/" target="blank">OpenSearch</a> CLI built in <a href="https://github.com/nestjs/nest" target="blank">Nest</a>,<br>
     a progressive Node.js framework for building efficient and scalable server-side applications.
   </p>
-  <!-- <p>
-    <a href="https://www.npmjs.com/@andreafspeziale/nestjs-memcached" target="_blank"><img src="https://img.shields.io/npm/v/@andreafspeziale/nestjs-memcached.svg" alt="NPM Version" /></a>
-    <a href="https://www.npmjs.com/@andreafspeziale/nestjs-memcached" target="_blank"><img src="https://img.shields.io/npm/l/@andreafspeziale/nestjs-memcached.svg" alt="Package License" /></a>
-    <a href="https://github.com/andreafspeziale/nestjs-memcached/actions" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/andreafspeziale/nestjs-memcached/test.yml" alt="Test Status"/></a>
-  <p> -->
+  <p>
+    <a href="https://www.npmjs.com/@andreafspeziale/os-cli" target="_blank"><img src="https://img.shields.io/npm/v/@andreafspeziale/os-cli.svg" alt="NPM Version" /></a>
+    <a href="https://www.npmjs.com/@andreafspeziale/os-cli" target="_blank"><img src="https://img.shields.io/npm/l/@andreafspeziale/os-cli.svg" alt="Package License" /></a>
+    <a href="https://github.com/andreafspeziale/os-cli/actions" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/andreafspeziale/os-cli/release.yml" alt="Release Status"/></a>
+  <p>
 </div>
 
 ## Installation
@@ -38,6 +38,13 @@ yarn global add @andreafspeziale/os-cli
 
 ```sh
 pnpm add -g @andreafspeziale/os-cli
+```
+
+### docker
+
+```sh
+docker pull andreafspeziale/os-cli
+docker run --rm --env-file .env andreafspeziale/os-cli
 ```
 
 ## How to use?
