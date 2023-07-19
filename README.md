@@ -25,19 +25,19 @@
 ### npm
 
 ```sh
-npm install @andreafspeziale/os-cli
+npm install -g @andreafspeziale/os-cli
 ```
 
 ### yarn
 
 ```sh
-yarn add @andreafspeziale/os-cli
+yarn global add @andreafspeziale/os-cli
 ```
 
 ### pnpm
 
 ```sh
-pnpm install @andreafspeziale/os-cli
+pnpm add -g @andreafspeziale/os-cli
 ```
 
 ## How to use?
