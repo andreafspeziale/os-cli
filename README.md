@@ -53,7 +53,7 @@ docker run --rm --env-file .env andreafspeziale/os-cli
 
 ### Quickstart
 
-To tast the CLI very quickly using `npx` or after installing it you can spawn OpenSearch locally by using the `docker-compose` file included in the repository:
+To taste the CLI very quickly using `npx` or after installing it you can spawn OpenSearch locally by using the `docker-compose` file included in the repository:
 
 - `git clone git@github.com:andreafspeziale/os-cli.git`
 - `cd os-cli`
