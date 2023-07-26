@@ -2,6 +2,11 @@
 
 ## [1.1.1](https://github.com/andreafspeziale/os-cli/compare/1.1.0...1.1.1) (2023-07-26)
 
+
+### Refactors
+
+* split local and proxy connection methods ([63beed1](https://github.com/andreafspeziale/os-cli/commit/63beed113aea666da1c005760080273fb1c9d0d3))
+
 ## [1.1.0](https://github.com/andreafspeziale/os-cli/compare/1.0.0...1.1.0) (2023-07-26)
 
 
