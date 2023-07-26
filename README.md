@@ -58,7 +58,7 @@ To taste the CLI very quickly using `npx` or after installing it you can spawn O
 - `git clone git@github.com:andreafspeziale/os-cli.git`
 - `cd os-cli`
 - `docker compose up -d`
-- `export OS_CONNECTION_METHOD=localOrProxy`
+- `export OS_CONNECTION_METHOD=local`
 - `npx @andreafspeziale/os-cli i l` or `os-cli i l`
 
 Like the `docker-compose` file there are also some recipes included in the repository:
@@ -66,25 +66,26 @@ Like the `docker-compose` file there are also some recipes included in the repos
 - `npx @andreafspeziale/os-cli i cr -i test -f ./recipes/create-index.json` or `os-cli i cr -i test -f ./recipes/create-index.json`
 
 ### Configuration
+> For proxy mode check [aws-sigv4-proxy](https://github.com/awslabs/aws-sigv4-proxy)
 
 The CLI leverages environment variables in order to set connection and logging options just once.
 
-| Name                        | Required                                               | Default                 | Description                                    | Values                                                          |
-|-----------------------------|--------------------------------------------------------|-------------------------|------------------------------------------------|-----------------------------------------------------------------|
-| OS_HOST                     | when `OS_CONNECTION_METHOD` is NOT _localOrProxy_      | `http://localhost:9200` | OpenSearch connection host                     | -                                                               |
-| OS_CONNECTION_METHOD        | Yes                                                    | -                       | How you want to connect to OpenSearch          | [`localOrProxy`, `serviceAccount`, `credentials`]               |
-| AWS_REGION                  | only when `OS_CONNECTION_METHOD` is NOT _localOrProxy_ | -                       | OpenSearch AWS connection region               | -                                                               |
-| AWS_ROLE_ARN                | only when `OS_CONNECTION_METHOD` is _serviceAccount_   | -                       | AWS role ARN for assume role connection        | -                                                               |
-| AWS_WEB_IDENTITY_TOKEN_FILE | only when `OS_CONNECTION_METHOD` is _serviceAccount_   | -                       | AWS web identity token file                    | -                                                               |
-| AWS_ACCESS_KEY_ID           | only when `OS_CONNECTION_METHOD` is _credentials_      | -                       | AWS access key id for canonical connection     | -                                                               |
-| AWS_SECRET_ACCESS_KEY       | only when `OS_CONNECTION_METHOD` is _credentials_      | -                       | AWS secret access key for canonical connection | -                                                               |
-| LOGGER_LEVEL                | No                                                     | `info`                  | Which logs will be displayed                   | [`silent`, `error`, `warn`, `info`, `http`, `verbose`, `debug`] |
-| LOGGER_PRETTY               | No                                                     | `true`                  | Boolean to enable/disable logs formatting      | `true`, `false`                                                 |
-| LOGGER_REDACT               | No                                                     | `''`                    | Removed specified words from logs              | -                                                               |
+| Name                        | Required                                                  | Default                          | Description                                    | Values                                                          |
+|-----------------------------|-----------------------------------------------------------|----------------------------------|------------------------------------------------|-----------------------------------------------------------------|
+| OS_HOST                     | when `OS_CONNECTION_METHOD` is NOT _local_ | _proxy_      | `http://localhost:(9200 | 8080)` | OpenSearch connection host                     | -                                                               |
+| OS_CONNECTION_METHOD        | Yes                                                       | -                                | How you want to connect to OpenSearch          | [`local`, `proxy`, `serviceAccount`, `credentials`]             |
+| AWS_REGION                  | only when `OS_CONNECTION_METHOD` is NOT _local_ | _proxy_ | -                                | OpenSearch AWS connection region               | -                                                               |
+| AWS_ROLE_ARN                | only when `OS_CONNECTION_METHOD` is _serviceAccount_      | -                                | AWS role ARN for assume role connection        | -                                                               |
+| AWS_WEB_IDENTITY_TOKEN_FILE | only when `OS_CONNECTION_METHOD` is _serviceAccount_      | -                                | AWS web identity token file                    | -                                                               |
+| AWS_ACCESS_KEY_ID           | only when `OS_CONNECTION_METHOD` is _credentials_         | -                                | AWS access key id for canonical connection     | -                                                               |
+| AWS_SECRET_ACCESS_KEY       | only when `OS_CONNECTION_METHOD` is _credentials_         | -                                | AWS secret access key for canonical connection | -                                                               |
+| LOGGER_LEVEL                | No                                                        | `info`                           | Which logs will be displayed                   | [`silent`, `error`, `warn`, `info`, `http`, `verbose`, `debug`] |
+| LOGGER_PRETTY               | No                                                        | `true`                           | Boolean to enable/disable logs formatting      | `true`, `false`                                                 |
+| LOGGER_REDACT               | No                                                        | `''`                             | Removed specified words from logs              | -                                                               |
 
 For a docker local OpenSearch instance all you need to do is:
 
-`export OS_CONNECTION_METHOD=localOrProxy`
+`export OS_CONNECTION_METHOD=local`
 
 Instead for a canonical AWS connection method a receipt along with your values would be:
 
