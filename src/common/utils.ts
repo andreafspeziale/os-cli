@@ -1,35 +1,34 @@
-import { z } from 'zod';
+import { ZodError, ZodIssue, z } from 'zod';
 import { readFileSync } from 'fs';
 import { LoggerService } from '../logger';
-
-// TODO: this utils could be a validator provider itself
+import { fromZodError } from 'zod-validation-error';
 
 const validationErrorLogBuilder = (
   fn: string,
-  name: string,
-  details: string,
+  error: Error,
 ): {
   message: string;
   meta: {
     fn: string;
     name: string;
-    details: string[] | Record<string, unknown>[];
+    details: string[] | ZodIssue[];
   };
-} => ({
-  message: 'Invalid input',
-  meta: {
-    fn,
-    name,
-
-    ...(name === 'ZodError'
-      ? {
-          details: JSON.parse(details),
-        }
-      : {
-          details: [details],
-        }),
-  },
-});
+} => {
+  return {
+    message: 'Invalid input',
+    meta: {
+      fn,
+      name: error.name,
+      ...(error instanceof ZodError
+        ? {
+            details: fromZodError(error).details,
+          }
+        : {
+            details: [error.message],
+          }),
+    },
+  };
+};
 
 export const validateAndParsePayloadOrExit = (
   p: string,
@@ -40,8 +39,7 @@ export const validateAndParsePayloadOrExit = (
   } catch (error) {
     const { message, meta } = validationErrorLogBuilder(
       'validateAndParsePayloadOrExit',
-      error.name,
-      error.message,
+      error,
     );
 
     logger.error(message, meta);
@@ -59,8 +57,7 @@ export const validateFileOrExit = (
   } catch (error) {
     const { message, meta } = validationErrorLogBuilder(
       'validateFileOrExit',
-      error.name,
-      error.message,
+      error,
     );
 
     logger.error(message, meta);
