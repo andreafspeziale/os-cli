@@ -1,7 +1,8 @@
 import type { ModuleMetadata, Type } from '@nestjs/common';
 
 export enum ConnectionMethod {
-  LocalOrProxy = 'localOrProxy',
+  Local = 'local',
+  Proxy = 'proxy',
   ServiceAccount = 'serviceAccount',
   Credentials = 'credentials',
 }
@@ -9,7 +10,7 @@ export enum ConnectionMethod {
 export type OpenSearchModuleOptions =
   | {
       host: string;
-      connectionMethod: ConnectionMethod.LocalOrProxy;
+      connectionMethod: ConnectionMethod.Local | ConnectionMethod.Proxy;
     }
   | {
       host: string;
