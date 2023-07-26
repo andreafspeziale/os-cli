@@ -1,5 +1,24 @@
 
 
+## [1.1.0](https://github.com/andreafspeziale/os-cli/compare/1.0.0...1.1.0) (2023-07-26)
+
+
+### Features
+
+* add config exception ([b537413](https://github.com/andreafspeziale/os-cli/commit/b5374136241906954f5408fb26926d4015ed2153))
+* add dockerfile and badges ([ce8b19e](https://github.com/andreafspeziale/os-cli/commit/ce8b19e6d57a18a55314c84e1a3a111acaa06603))
+
+
+### Bug Fixes
+
+* readme ([b23113f](https://github.com/andreafspeziale/os-cli/commit/b23113f9c6ae078a467aa8d1630b0f35285e35e1))
+* readme ([552bbd4](https://github.com/andreafspeziale/os-cli/commit/552bbd49aebab3c45e0a8b969c8db99a389a138c))
+
+
+### Miscellaneous
+
+* update pnpm to v8.6.10 ([b5f6f2c](https://github.com/andreafspeziale/os-cli/commit/b5f6f2c6fdac704d26dc5eb7433b11b71d93c374))
+
 ## 1.0.0 (2023-07-19)
 
 
