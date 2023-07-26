@@ -1,6 +1,6 @@
 FROM node:18.17.0-alpine3.18 as base
 
-RUN npm i -g pnpm@8.6.9
+RUN npm i -g pnpm@8.6.10
 
 RUN mkdir /opt/os-cli && chown -R node:node /opt/os-cli
 WORKDIR /opt/os-cli
