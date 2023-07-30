@@ -1,5 +1,7 @@
 
 
+## 1.1.2 (2023-07-30)
+
 ## [1.1.1](https://github.com/andreafspeziale/os-cli/compare/1.1.0...1.1.1) (2023-07-26)
 
 
