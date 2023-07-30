@@ -20,6 +20,10 @@
             "section": "Features"
           },
           {
+            "type": "refactor",
+            "section": "Refactors"
+          },
+          {
             "type": "fix",
             "section": "Bug Fixes"
           },
