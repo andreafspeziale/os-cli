@@ -7,7 +7,18 @@
 
 * release workflow ([651c1bf](https://github.com/andreafspeziale/os-cli/commit/651c1bf2a1d05b84f38e491f2869e4abbc78c086))
 
-## 1.1.2 (2023-07-30)
+## [1.1.2](https://github.com/andreafspeziale/os-cli/compare/1.1.1...1.1.2) (2023-07-30)
+
+
+### Features
+
+* add docker build/push action w/ registry cache ([9748042](https://github.com/andreafspeziale/os-cli/commit/974804200be6b986dd25a103d147714ce7daff56))
+
+
+### Bug Fixes
+
+* changelog ([a6b23ef](https://github.com/andreafspeziale/os-cli/commit/a6b23ef57cf39022464d7fcc75105e9858c93a25))
+* missing refactor sections in changelog ([ff05950](https://github.com/andreafspeziale/os-cli/commit/ff05950ac3d0de1b50faaf4418c1c88ad4e9dc52))
 
 ## [1.1.1](https://github.com/andreafspeziale/os-cli/compare/1.1.0...1.1.1) (2023-07-26)
 
