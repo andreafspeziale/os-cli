@@ -2,7 +2,7 @@ name: Docker build and push
 on:
   release:
     types:
-      - created
+      - published
 jobs:
   docker-build-and-push:
     runs-on: ubuntu-latest
