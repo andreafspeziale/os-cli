@@ -1,5 +1,12 @@
 
 
+## [1.1.3](https://github.com/andreafspeziale/os-cli/compare/1.1.2...1.1.3) (2023-07-30)
+
+
+### Bug Fixes
+
+* release workflow ([651c1bf](https://github.com/andreafspeziale/os-cli/commit/651c1bf2a1d05b84f38e491f2869e4abbc78c086))
+
 ## 1.1.2 (2023-07-30)
 
 ## [1.1.1](https://github.com/andreafspeziale/os-cli/compare/1.1.0...1.1.1) (2023-07-26)
