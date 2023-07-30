@@ -1,5 +1,17 @@
 
 
+## [1.1.4](https://github.com/andreafspeziale/os-cli/compare/1.1.3...1.1.4) (2023-07-30)
+
+
+### Bug Fixes
+
+* changelog ([b329753](https://github.com/andreafspeziale/os-cli/commit/b329753117eb1f71dbbb5589328867df5ab70be0))
+
+
+### Miscellaneous
+
+* update docker build and push trigger and tag ref ([20c5cc7](https://github.com/andreafspeziale/os-cli/commit/20c5cc7cc9a39e396a8c62dcd4ae306fd1f74cda))
+
 ## [1.1.3](https://github.com/andreafspeziale/os-cli/compare/1.1.2...1.1.3) (2023-07-30)
 
 
