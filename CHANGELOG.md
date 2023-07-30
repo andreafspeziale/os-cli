@@ -1,5 +1,12 @@
 
 
+## [1.1.6](https://github.com/andreafspeziale/os-cli/compare/1.1.5...1.1.6) (2023-07-30)
+
+
+### Miscellaneous
+
+* update docker build and push trigger ([4c210f9](https://github.com/andreafspeziale/os-cli/commit/4c210f9adbfa4e24fb228184313c3b8e682fb1dd))
+
 ## [1.1.5](https://github.com/andreafspeziale/os-cli/compare/1.1.4...1.1.5) (2023-07-30)
 
 
