@@ -1,5 +1,17 @@
 
 
+## [1.2.0](https://github.com/andreafspeziale/os-cli/compare/1.1.9...1.2.0) (2023-07-31)
+
+
+### Features
+
+* add version command ([98fb7e7](https://github.com/andreafspeziale/os-cli/commit/98fb7e73b4339627780bd77f5f551bb1d2f3c918))
+
+
+### Miscellaneous
+
+* update readme ([20affb9](https://github.com/andreafspeziale/os-cli/commit/20affb9a6f0fcce3c8ebf01617afd31cc5799b55))
+
 ## [1.1.9](https://github.com/andreafspeziale/os-cli/compare/1.1.8...1.1.9) (2023-07-31)
 
 
