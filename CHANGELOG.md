@@ -1,5 +1,12 @@
 
 
+## [1.1.9](https://github.com/andreafspeziale/os-cli/compare/1.1.8...1.1.9) (2023-07-31)
+
+
+### Miscellaneous
+
+* remove linux/arm64 ([5dd6098](https://github.com/andreafspeziale/os-cli/commit/5dd60986633924018fdd3c4048e4d9418d4bc359))
+
 ## [1.1.8](https://github.com/andreafspeziale/os-cli/compare/1.1.7...1.1.8) (2023-07-31)
 
 
