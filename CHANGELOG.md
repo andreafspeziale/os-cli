@@ -1,5 +1,17 @@
 
 
+## [1.1.7](https://github.com/andreafspeziale/os-cli/compare/1.1.6...1.1.7) (2023-07-31)
+
+
+### Bug Fixes
+
+* docker build and push ([1b3c591](https://github.com/andreafspeziale/os-cli/commit/1b3c591907f22b87b2c0a8af07ac98e68bace9b5))
+
+
+### Miscellaneous
+
+* update pnpm to v8.6.11 ([c3f3842](https://github.com/andreafspeziale/os-cli/commit/c3f3842524dd6de8b751f61aea1240ab7246f867))
+
 ## [1.1.6](https://github.com/andreafspeziale/os-cli/compare/1.1.5...1.1.6) (2023-07-30)
 
 
