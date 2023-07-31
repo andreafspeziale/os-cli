@@ -26,6 +26,7 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/amd64,linux/arm64,linux/arm64/v8
           tags: ${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:${{ env.TAG }}, ${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:latest
           cache-from: type=registry,ref=${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:buildcache
           cache-to: type=registry,ref=${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:buildcache,mode=max
