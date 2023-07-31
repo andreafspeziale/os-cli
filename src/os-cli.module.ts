@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Config, parse, mapConfig } from './config';
+import { VersionModule } from './version';
 import { IndicesModule } from './indices';
 import { LoggerModule } from './logger';
 import { OpenSearchModule } from './os';
@@ -19,6 +20,7 @@ import { OpenSearchModule } from './os';
       useFactory: (cs: ConfigService<Config, true>) => cs.get('os'),
       inject: [ConfigService],
     }),
+    VersionModule,
     IndicesModule,
   ],
 })

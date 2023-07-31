@@ -47,6 +47,8 @@ docker pull andreafspeziale/os-cli
 docker run --rm --env-file .env andreafspeziale/os-cli
 ```
 
+> If using a local (docker) OpenSearch image like the one included in the `docker-compose` file be sure to set correctly the `network` option and `OS_HOST` env variable (OS_HOST=http://opensearch:9200) in the above command (`docker run --rm --env-file .env --network os-cli_default andreafspeziale/os-cli`)
+
 ## How to use?
 
 ![](./assets/terminal.gif)
