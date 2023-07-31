@@ -1,5 +1,12 @@
 
 
+## [1.1.8](https://github.com/andreafspeziale/os-cli/compare/1.1.7...1.1.8) (2023-07-31)
+
+
+### Miscellaneous
+
+* docker multiplatform ([e86434f](https://github.com/andreafspeziale/os-cli/commit/e86434ff1f07570a7a25444ce77c744e712b32b5))
+
 ## [1.1.7](https://github.com/andreafspeziale/os-cli/compare/1.1.6...1.1.7) (2023-07-31)
 
 
