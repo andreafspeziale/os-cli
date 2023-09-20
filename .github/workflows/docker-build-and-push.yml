@@ -30,3 +30,4 @@ jobs:
           tags: ${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:${{ env.TAG }}, ${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:latest
           cache-from: type=registry,ref=${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:buildcache
           cache-to: type=registry,ref=${{ secrets.CI_DOCKERHUB_USERNAME }}/os-cli:buildcache,mode=max
+
