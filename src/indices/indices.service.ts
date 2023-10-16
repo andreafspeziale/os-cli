@@ -63,4 +63,22 @@ export class IndicesService {
       })
     ).body;
   }
+
+  async reindex(
+    index: string,
+    targetIndex: string,
+  ): Promise<Record<string, unknown>> {
+    return (
+      await this.osClient.reindex({
+        body: {
+          source: {
+            index,
+          },
+          dest: {
+            index: targetIndex,
+          },
+        },
+      })
+    ).body;
+  }
 }

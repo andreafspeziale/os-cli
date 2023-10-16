@@ -6,6 +6,7 @@ import { OpenCommand } from './open.command';
 import { DeleteCommand } from './delete.command';
 import { CreateCommand } from './create.command';
 import { UpdateCommand } from './update.command';
+import { ReIndexCommand } from './reindex.command';
 
 @Command({
   name: 'indices',
@@ -19,6 +20,7 @@ import { UpdateCommand } from './update.command';
     DeleteCommand,
     CreateCommand,
     UpdateCommand,
+    ReIndexCommand,
   ],
 })
 export class IndexCommand extends CommandRunner {

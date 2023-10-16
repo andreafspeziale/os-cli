@@ -8,8 +8,13 @@ import {
   DeleteCommand,
   CreateCommand,
   UpdateCommand,
+  ReIndexCommand,
 } from './commands';
-import { DeleteQuestions, UpdateQuestions } from './questions';
+import {
+  DeleteQuestions,
+  ReIndexQuestions,
+  UpdateQuestions,
+} from './questions';
 import { IndicesService } from './indices.service';
 
 @Module({
@@ -25,6 +30,8 @@ import { IndicesService } from './indices.service';
     CreateCommand,
     UpdateCommand,
     UpdateQuestions,
+    ReIndexCommand,
+    ReIndexQuestions,
   ],
 })
 export class IndicesModule {}

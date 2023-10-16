@@ -35,6 +35,7 @@ export const validateAndParsePayloadOrExit = (
   logger: LoggerService,
 ): Record<string, unknown> | never => {
   try {
+    // TODO: this is not working as expected, cant recall about passthrough()
     return z.object({}).passthrough().parse(JSON.parse(p));
   } catch (error) {
     const { message, meta } = validationErrorLogBuilder(
