@@ -9,6 +9,7 @@ import {
   validateAndParsePayloadOrExit,
   validateFileOrExit,
 } from '../../common';
+import { ValidJsonPayloadFromString } from '../../common';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'update', description: 'update index', aliases: ['u'] })
@@ -36,7 +37,11 @@ export class UpdateCommand extends CommandRunner {
     description: 'inline update index JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(val, this.logger);
+    return validateAndParsePayloadOrExit(
+      val,
+      ValidJsonPayloadFromString,
+      this.logger,
+    );
   }
 
   @Option({
@@ -46,6 +51,7 @@ export class UpdateCommand extends CommandRunner {
   parseFile(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
       validateFileOrExit(val, this.logger),
+      ValidJsonPayloadFromString,
       this.logger,
     );
   }

@@ -1,4 +1,4 @@
-import { ZodError, ZodIssue, z } from 'zod';
+import { ZodError, ZodIssue, ZodType } from 'zod';
 import { readFileSync } from 'fs';
 import { LoggerService } from '../logger';
 import { fromZodError } from 'zod-validation-error';
@@ -30,13 +30,13 @@ const validationErrorLogBuilder = (
   };
 };
 
-export const validateAndParsePayloadOrExit = (
+export const validateAndParsePayloadOrExit = <S extends ZodType>(
   p: string,
+  schema: S,
   logger: LoggerService,
-): Record<string, unknown> | never => {
+): S['_output'] | never => {
   try {
-    // TODO: this is not working as expected, cant recall about passthrough()
-    return z.object({}).passthrough().parse(JSON.parse(p));
+    return schema.parse(p);
   } catch (error) {
     const { message, meta } = validationErrorLogBuilder(
       'validateAndParsePayloadOrExit',

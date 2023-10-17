@@ -1,5 +1,6 @@
 import { SubCommand, CommandRunner, Option } from 'nest-commander';
 import { LoggerService } from '../../logger';
+import { ValidJsonPayloadFromString } from '../../common';
 import {
   validateAndParsePayloadOrExit,
   validateFileOrExit,
@@ -30,7 +31,11 @@ export class CreateCommand extends CommandRunner {
     description: 'inline create index JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(val, this.logger);
+    return validateAndParsePayloadOrExit(
+      val,
+      ValidJsonPayloadFromString,
+      this.logger,
+    );
   }
 
   @Option({
@@ -40,6 +45,7 @@ export class CreateCommand extends CommandRunner {
   parseFile(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
       validateFileOrExit(val, this.logger),
+      ValidJsonPayloadFromString,
       this.logger,
     );
   }
