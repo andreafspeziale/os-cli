@@ -53,28 +53,26 @@ export class ReIndexCommand extends CommandRunner {
       reindex: 'y' | 'n';
     }>('reindex-questions', {});
 
-    try {
-      if (reindex === 'n') {
-        process.exit(1);
+    if (reindex === 'y') {
+      try {
+        const res = await this.indicesService.reindex(
+          options.index,
+          options.targetIndex,
+        );
+
+        this.logger.log('Reindex successfully started', {
+          fn: this.run.name,
+          res,
+        });
+      } catch (error) {
+        this.logger.error('Error while reindexing', {
+          fn: this.run.name,
+          index: options.index,
+          name: error.name,
+          body: error.meta.body,
+          statusCode: error.meta.statusCode,
+        });
       }
-
-      const res = await this.indicesService.reindex(
-        options.index,
-        options.targetIndex,
-      );
-
-      this.logger.log('Reindex successfully started', {
-        fn: this.run.name,
-        res,
-      });
-    } catch (error) {
-      this.logger.error('Error while reindexing', {
-        fn: this.run.name,
-        index: options.index,
-        name: error.name,
-        body: error.meta.body,
-        statusCode: error.meta.statusCode,
-      });
     }
   }
 }
