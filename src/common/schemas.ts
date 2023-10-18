@@ -6,14 +6,16 @@ export const ValidJsonPayloadFromString = z
     (val) => {
       try {
         const parsed = JSON.parse(val);
-        z.object({}).parse(parsed);
+        z.union([z.array(z.object({})), z.object({})]).parse(parsed);
         return true;
       } catch (error) {
         return false;
       }
     },
     {
-      message: 'Expecting valid JSON string, received invalid',
+      message: 'Expecting valid JSON {} | [{}] string, received invalid',
     },
   )
-  .transform<Record<string, unknown>>((val: string) => JSON.parse(val));
+  .transform<Record<string, unknown> | Record<string, unknown>[]>(
+    (val: string) => JSON.parse(val),
+  );

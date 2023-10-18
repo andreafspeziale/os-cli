@@ -1,5 +1,6 @@
 import { Question, QuestionSet } from 'nest-commander';
 
+// TODO: test questions
 @QuestionSet({ name: 'delete-questions' })
 export class DeleteQuestions {
   @Question({

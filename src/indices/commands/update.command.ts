@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import {
   SubCommand,
   CommandRunner,
@@ -39,7 +40,7 @@ export class UpdateCommand extends CommandRunner {
   parsePayload(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
       val,
-      ValidJsonPayloadFromString,
+      ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,
     );
   }
@@ -51,7 +52,7 @@ export class UpdateCommand extends CommandRunner {
   parseFile(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
       validateFileOrExit(val, this.logger),
-      ValidJsonPayloadFromString,
+      ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,
     );
   }

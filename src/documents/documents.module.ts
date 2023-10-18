@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DeleteCommand, DocumentsCommand } from './commands';
+import { DeleteCommand, DocumentsCommand, CreateCommand } from './commands';
 import { DeleteQuestions, BulkQuestions } from './questions';
 import { DocumentsService } from './documents.service';
 
@@ -10,6 +10,7 @@ import { DocumentsService } from './documents.service';
     DeleteCommand,
     DeleteQuestions,
     BulkQuestions,
+    CreateCommand,
   ],
 })
 export class DocumentsModule {}

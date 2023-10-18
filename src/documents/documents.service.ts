@@ -30,4 +30,16 @@ export class DocumentsService {
       })
     ).body;
   }
+
+  async create(
+    index: string,
+    payload: Record<string, unknown>,
+  ): Promise<Record<string, unknown>> {
+    return (
+      await this.osClient.index({
+        index,
+        body: payload,
+      })
+    ).body;
+  }
 }

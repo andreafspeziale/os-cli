@@ -8,6 +8,7 @@ import { CreateCommand } from './create.command';
 import { UpdateCommand } from './update.command';
 import { ReIndexCommand } from './reindex.command';
 
+// TODO: rename sub-commands
 @Command({
   name: 'indices',
   description: 'opensearch indices related commands',

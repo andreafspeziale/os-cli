@@ -89,11 +89,10 @@ export class DeleteCommand extends CommandRunner {
 
         this.logger.log('Document/s successfully deleted', {
           fn: this.run.name,
-          docs: options.documentsIds,
           res,
         });
       } catch (error) {
-        this.logger.error('Error while deleting index', {
+        this.logger.error('Error while deleting document/s', {
           fn: this.run.name,
           index: options.index,
           name: error.name,
