@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { DeleteQuestions } from '../common';
 import {
   GetCommand,
   IndexCommand,
@@ -10,11 +11,7 @@ import {
   UpdateCommand,
   ReIndexCommand,
 } from './commands';
-import {
-  DeleteQuestions,
-  ReIndexQuestions,
-  UpdateQuestions,
-} from './questions';
+import { ReIndexQuestions, UpdateQuestions } from './questions';
 import { IndicesService } from './indices.service';
 
 @Module({
