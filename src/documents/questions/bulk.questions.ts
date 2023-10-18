@@ -1,13 +1,13 @@
 import { Question, QuestionSet } from 'nest-commander';
 
-@QuestionSet({ name: 'delete-questions' })
-export class DeleteQuestions {
+@QuestionSet({ name: 'bulk-questions' })
+export class BulkQuestions {
   @Question({
-    message: 'Are you sure you want to delete the index?',
+    message: 'Do you want to perform the op. in bulk?',
     name: 'choice',
     type: 'list',
     choices: ['y', 'n'],
-    default: 'n',
+    default: 'y',
   })
   parseChoice(val: string): string {
     return val;

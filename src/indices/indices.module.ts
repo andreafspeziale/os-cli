@@ -1,30 +1,34 @@
 import { Module } from '@nestjs/common';
+import { DeleteQuestions } from '../common';
 import {
-  GetCommand,
+  GetIndexCommand,
   IndexCommand,
-  ListCommand,
-  CloseCommand,
-  OpenCommand,
-  DeleteCommand,
-  CreateCommand,
-  UpdateCommand,
+  ListIndexCommand,
+  CloseIndexCommand,
+  OpenIndexCommand,
+  DeleteIndexCommand,
+  CreateIndexCommand,
+  UpdateIndexCommand,
+  ReIndexCommand,
 } from './commands';
-import { DeleteQuestions, UpdateQuestions } from './questions';
+import { ReIndexQuestions, UpdateQuestions } from './questions';
 import { IndicesService } from './indices.service';
 
 @Module({
   providers: [
     IndicesService,
     IndexCommand,
-    ListCommand,
-    GetCommand,
-    CloseCommand,
-    OpenCommand,
-    DeleteCommand,
+    ListIndexCommand,
+    GetIndexCommand,
+    CloseIndexCommand,
+    OpenIndexCommand,
+    DeleteIndexCommand,
     DeleteQuestions,
-    CreateCommand,
-    UpdateCommand,
+    CreateIndexCommand,
+    UpdateIndexCommand,
     UpdateQuestions,
+    ReIndexCommand,
+    ReIndexQuestions,
   ],
 })
 export class IndicesModule {}

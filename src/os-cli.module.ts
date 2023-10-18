@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Config, parse, mapConfig } from './config';
 import { VersionModule } from './version';
 import { IndicesModule } from './indices';
+import { DocumentsModule } from './documents';
 import { LoggerModule } from './logger';
 import { OpenSearchModule } from './os';
 
@@ -22,6 +23,7 @@ import { OpenSearchModule } from './os';
     }),
     VersionModule,
     IndicesModule,
+    DocumentsModule,
   ],
 })
 export class OSCLIModule {}

@@ -20,6 +20,10 @@
       "title": {
         "type": "text",
         "analyzer": "asciifolding"
+      },
+      "date": {
+        "type": "date",
+        "format": "basic_date"
       }
     }
   }

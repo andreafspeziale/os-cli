@@ -1,19 +1,21 @@
+import { z } from 'zod';
 import { SubCommand, CommandRunner, Option } from 'nest-commander';
 import { LoggerService } from '../../logger';
 import {
   validateAndParsePayloadOrExit,
   validateFileOrExit,
+  ValidJsonPayloadFromString,
 } from '../../common';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'create', description: 'create index', aliases: ['cr'] })
-export class CreateCommand extends CommandRunner {
+export class CreateIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
   ) {
     super();
-    this.logger.setContext(CreateCommand.name);
+    this.logger.setContext(CreateIndexCommand.name);
   }
 
   @Option({
@@ -30,7 +32,11 @@ export class CreateCommand extends CommandRunner {
     description: 'inline create index JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(val, this.logger);
+    return validateAndParsePayloadOrExit(
+      val,
+      ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
+      this.logger,
+    );
   }
 
   @Option({
@@ -40,6 +46,7 @@ export class CreateCommand extends CommandRunner {
   parseFile(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
       validateFileOrExit(val, this.logger),
+      ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,
     );
   }

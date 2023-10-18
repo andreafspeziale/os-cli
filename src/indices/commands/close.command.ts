@@ -3,13 +3,13 @@ import { LoggerService } from '../../logger';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'close', description: 'close index', aliases: ['cl'] })
-export class CloseCommand extends CommandRunner {
+export class CloseIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
   ) {
     super();
-    this.logger.setContext(CloseCommand.name);
+    this.logger.setContext(CloseIndexCommand.name);
   }
 
   @Option({

@@ -5,4 +5,5 @@ export * from './open.command';
 export * from './delete.command';
 export * from './create.command';
 export * from './update.command';
+export * from './reindex.command';
 export * from './indices.command';

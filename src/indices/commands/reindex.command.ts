@@ -7,47 +7,65 @@ import {
 import { LoggerService } from '../../logger';
 import { IndicesService } from '../indices.service';
 
-@SubCommand({ name: 'delete', description: 'delete index', aliases: ['d'] })
-export class DeleteIndexCommand extends CommandRunner {
+@SubCommand({ name: 'reindex', description: 'reindex docs', aliases: ['ri'] })
+export class ReIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
     private readonly inquirer: InquirerService,
   ) {
     super();
-    this.logger.setContext(DeleteIndexCommand.name);
+    this.logger.setContext(ReIndexCommand.name);
   }
 
   @Option({
     flags: '-i, --index, <string>',
-    description: 'index name',
+    description: 'source index name',
     required: true,
   })
   parseIndex(val: string): string {
     return val;
   }
 
-  async run(passedParam: string[], options: { index: string }): Promise<void> {
+  @Option({
+    flags: '-ti, --target-index, <string>',
+    description: 'target index name',
+    required: true,
+  })
+  parseTargetIndex(val: string): string {
+    return val;
+  }
+
+  async run(
+    passedParam: string[],
+    options: {
+      index: string;
+      targetIndex: string;
+    },
+  ): Promise<void> {
     this.logger.debug('Running command...', {
       fn: this.run.name,
       passedParam,
       options,
     });
 
-    const choice = (
-      await this.inquirer.ask<{ choice: 'y' | 'n' }>('delete-questions', {})
-    ).choice;
+    const { reindex } = await this.inquirer.ask<{
+      reindex: 'y' | 'n';
+    }>('reindex-questions', {});
 
-    if (choice === 'y') {
+    if (reindex === 'y') {
       try {
-        const res = await this.indicesService.delete(options.index);
+        const res = await this.indicesService.reindex(
+          options.index,
+          options.targetIndex,
+        );
 
-        this.logger.log('Index successfully deleted', {
+        this.logger.log('Reindex successfully started', {
           fn: this.run.name,
           res,
         });
       } catch (error) {
-        this.logger.error('Error while deleting index', {
+        this.logger.error('Error while reindexing', {
           fn: this.run.name,
           index: options.index,
           name: error.name,

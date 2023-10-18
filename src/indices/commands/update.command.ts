@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import {
   SubCommand,
   CommandRunner,
@@ -9,17 +10,18 @@ import {
   validateAndParsePayloadOrExit,
   validateFileOrExit,
 } from '../../common';
+import { ValidJsonPayloadFromString } from '../../common';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'update', description: 'update index', aliases: ['u'] })
-export class UpdateCommand extends CommandRunner {
+export class UpdateIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
     private readonly inquirer: InquirerService,
   ) {
     super();
-    this.logger.setContext(UpdateCommand.name);
+    this.logger.setContext(UpdateIndexCommand.name);
   }
 
   @Option({
@@ -36,7 +38,11 @@ export class UpdateCommand extends CommandRunner {
     description: 'inline update index JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(val, this.logger);
+    return validateAndParsePayloadOrExit(
+      val,
+      ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
+      this.logger,
+    );
   }
 
   @Option({
@@ -46,6 +52,7 @@ export class UpdateCommand extends CommandRunner {
   parseFile(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
       validateFileOrExit(val, this.logger),
+      ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,
     );
   }
