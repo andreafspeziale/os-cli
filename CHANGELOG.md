@@ -1,5 +1,39 @@
 
 
+## [1.3.0](https://github.com/andreafspeziale/os-cli/compare/1.2.0...1.3.0) (2023-10-18)
+
+
+### Features
+
+* add create document command ([72d55e4](https://github.com/andreafspeziale/os-cli/commit/72d55e411c871adffd627c407ad18469c35ea3ca))
+* add delete documents command ([37a675e](https://github.com/andreafspeziale/os-cli/commit/37a675e1776df3562beee2d43b5f9a92508525a0))
+* add reindex command ([41dddb0](https://github.com/andreafspeziale/os-cli/commit/41dddb0bb6796daae3f84622d0e4c2ad45aaa8f9))
+
+
+### Bug Fixes
+
+* creation docs log ([321145f](https://github.com/andreafspeziale/os-cli/commit/321145f38334db2710b0da021c3eb2a5166d7682))
+
+
+### Refactors
+
+* delete docs args ([9395366](https://github.com/andreafspeziale/os-cli/commit/939536673a0102e171e5896642a07c132ea71dd1))
+* make delete-question generic ([b8a3f4c](https://github.com/andreafspeziale/os-cli/commit/b8a3f4cb5b6e2b44deab693ab98471b1ad1d6034))
+
+
+### Miscellaneous
+
+* align choice-if pattern ([cb7bcfc](https://github.com/andreafspeziale/os-cli/commit/cb7bcfc75359409ba851aa290d12a824e255188d))
+* missing updates node.js to v20.7.0 ([56d304b](https://github.com/andreafspeziale/os-cli/commit/56d304b891e77e94a2d040f33052895d7a5109e8))
+* nodejs upgrade ([e5bd4cf](https://github.com/andreafspeziale/os-cli/commit/e5bd4cfd237a579c52a23dcbc430916acf4bdfdb))
+* rename subcommands ([396246a](https://github.com/andreafspeziale/os-cli/commit/396246a963b302a3578e3b872998ccc1821e574a))
+* update dependency node ([0fad292](https://github.com/andreafspeziale/os-cli/commit/0fad29236f666c3b4b09c0aba2b9f0cd5c39c325))
+* update dependency node to v20.8.1 ([1588ae1](https://github.com/andreafspeziale/os-cli/commit/1588ae1399aa6e0bdb27d3a387317446452ff02c))
+* update node in ci ([7531133](https://github.com/andreafspeziale/os-cli/commit/75311334320b0ffb9ade04795bf19410c4320df5))
+* update node.js to v20.7.0 ([afe692c](https://github.com/andreafspeziale/os-cli/commit/afe692cd35a979c7faf82c45ad2f6236f5a03ca0))
+* update pnpm to v8.7.6 ([39170be](https://github.com/andreafspeziale/os-cli/commit/39170be2c728fd5323eb4963a09a80e4a25239b5))
+* update pnpm to v8.9.2 ([5ca8662](https://github.com/andreafspeziale/os-cli/commit/5ca8662a289a97f0ace88cab7a2abfcf15a205d9))
+
 ## [1.2.0](https://github.com/andreafspeziale/os-cli/compare/1.1.9...1.2.0) (2023-07-31)
 
 
