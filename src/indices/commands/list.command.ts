@@ -3,13 +3,13 @@ import { LoggerService } from '../../logger';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'list', description: 'list indices', aliases: ['l'] })
-export class ListCommand extends CommandRunner {
+export class ListIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
   ) {
     super();
-    this.logger.setContext(ListCommand.name);
+    this.logger.setContext(ListIndexCommand.name);
   }
 
   async run(

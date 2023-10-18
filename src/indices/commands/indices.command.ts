@@ -1,26 +1,25 @@
 import { Command, CommandRunner } from 'nest-commander';
-import { ListCommand } from './list.command';
-import { GetCommand } from './get.command';
-import { CloseCommand } from './close.command';
-import { OpenCommand } from './open.command';
-import { DeleteCommand } from './delete.command';
-import { CreateCommand } from './create.command';
-import { UpdateCommand } from './update.command';
+import { ListIndexCommand } from './list.command';
+import { GetIndexCommand } from './get.command';
+import { CloseIndexCommand } from './close.command';
+import { OpenIndexCommand } from './open.command';
+import { DeleteIndexCommand } from './delete.command';
+import { CreateIndexCommand } from './create.command';
+import { UpdateIndexCommand } from './update.command';
 import { ReIndexCommand } from './reindex.command';
 
-// TODO: rename sub-commands
 @Command({
   name: 'indices',
   description: 'opensearch indices related commands',
   aliases: ['i'],
   subCommands: [
-    ListCommand,
-    GetCommand,
-    CloseCommand,
-    OpenCommand,
-    DeleteCommand,
-    CreateCommand,
-    UpdateCommand,
+    ListIndexCommand,
+    GetIndexCommand,
+    CloseIndexCommand,
+    OpenIndexCommand,
+    DeleteIndexCommand,
+    CreateIndexCommand,
+    UpdateIndexCommand,
     ReIndexCommand,
   ],
 })

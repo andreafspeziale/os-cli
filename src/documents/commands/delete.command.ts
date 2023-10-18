@@ -14,14 +14,14 @@ import { validateAndParsePayloadOrExit } from '../../common';
   description: 'delete document/s',
   aliases: ['d'],
 })
-export class DeleteCommand extends CommandRunner {
+export class DeleteDocumentsCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly documentsService: DocumentsService,
     private readonly inquirer: InquirerService,
   ) {
     super();
-    this.logger.setContext(DeleteCommand.name);
+    this.logger.setContext(DeleteDocumentsCommand.name);
   }
 
   @Option({

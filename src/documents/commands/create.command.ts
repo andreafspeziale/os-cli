@@ -17,14 +17,14 @@ import { DocumentsService } from '../documents.service';
   description: 'create document/s',
   aliases: ['cr'],
 })
-export class CreateCommand extends CommandRunner {
+export class CreateDocumentsCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly documentsService: DocumentsService,
     private readonly inquirer: InquirerService,
   ) {
     super();
-    this.logger.setContext(CreateCommand.name);
+    this.logger.setContext(CreateDocumentsCommand.name);
   }
 
   @Option({

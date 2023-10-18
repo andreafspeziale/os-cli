@@ -1,6 +1,10 @@
 import { Module } from '@nestjs/common';
 import { DeleteQuestions } from '../common';
-import { DeleteCommand, DocumentsCommand, CreateCommand } from './commands';
+import {
+  DeleteDocumentsCommand,
+  DocumentsCommand,
+  CreateDocumentsCommand,
+} from './commands';
 import { BulkQuestions } from './questions';
 import { DocumentsService } from './documents.service';
 
@@ -8,10 +12,10 @@ import { DocumentsService } from './documents.service';
   providers: [
     DocumentsService,
     DocumentsCommand,
-    DeleteCommand,
+    DeleteDocumentsCommand,
     DeleteQuestions,
     BulkQuestions,
-    CreateCommand,
+    CreateDocumentsCommand,
   ],
 })
 export class DocumentsModule {}

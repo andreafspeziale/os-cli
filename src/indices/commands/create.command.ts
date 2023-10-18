@@ -9,13 +9,13 @@ import {
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'create', description: 'create index', aliases: ['cr'] })
-export class CreateCommand extends CommandRunner {
+export class CreateIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
   ) {
     super();
-    this.logger.setContext(CreateCommand.name);
+    this.logger.setContext(CreateIndexCommand.name);
   }
 
   @Option({

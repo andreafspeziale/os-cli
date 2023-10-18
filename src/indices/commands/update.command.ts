@@ -14,14 +14,14 @@ import { ValidJsonPayloadFromString } from '../../common';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'update', description: 'update index', aliases: ['u'] })
-export class UpdateCommand extends CommandRunner {
+export class UpdateIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
     private readonly inquirer: InquirerService,
   ) {
     super();
-    this.logger.setContext(UpdateCommand.name);
+    this.logger.setContext(UpdateIndexCommand.name);
   }
 
   @Option({

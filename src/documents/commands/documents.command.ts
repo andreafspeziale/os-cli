@@ -1,13 +1,12 @@
 import { Command, CommandRunner } from 'nest-commander';
-import { DeleteCommand } from './delete.command';
-import { CreateCommand } from './create.command';
+import { DeleteDocumentsCommand } from './delete.command';
+import { CreateDocumentsCommand } from './create.command';
 
-// TODO: rename sub-commands
 @Command({
   name: 'documents',
   description: 'opensearch documents related commands',
   aliases: ['d'],
-  subCommands: [DeleteCommand, CreateCommand],
+  subCommands: [DeleteDocumentsCommand, CreateDocumentsCommand],
 })
 export class DocumentsCommand extends CommandRunner {
   constructor() {

@@ -8,14 +8,14 @@ import { LoggerService } from '../../logger';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'delete', description: 'delete index', aliases: ['d'] })
-export class DeleteCommand extends CommandRunner {
+export class DeleteIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
     private readonly inquirer: InquirerService,
   ) {
     super();
-    this.logger.setContext(DeleteCommand.name);
+    this.logger.setContext(DeleteIndexCommand.name);
   }
 
   @Option({
