@@ -115,12 +115,12 @@ export class CreateDocumentsCommand extends CommandRunner {
               );
       } else {
         res = await this.documentsService.create(options.index, payload);
-
-        this.logger.log('Document/s successfully created', {
-          fn: this.run.name,
-          res,
-        });
       }
+
+      this.logger.log('Document/s successfully created', {
+        fn: this.run.name,
+        res,
+      });
     } catch (error) {
       this.logger.error('Error while creating document/s', {
         fn: this.run.name,
