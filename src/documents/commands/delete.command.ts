@@ -41,17 +41,14 @@ export class DeleteDocumentsCommand extends CommandRunner {
   parseDocumentsIds(val: string): string[] {
     return validateAndParsePayloadOrExit(
       val,
-      z
-        .string()
-        .regex(new RegExp('^[1-9](,[1-9])*$'))
-        .transform((val) => val.split(',')),
+      z.string().transform((val) => val.split(',')),
       this.logger,
     );
   }
 
   async run(
     passedParam: string[],
-    options: { index: string; documentsIds: string[] },
+    options: { index: string; documents: string[] },
   ): Promise<void> {
     this.logger.debug('Running command...', {
       fn: this.run.name,
@@ -65,7 +62,7 @@ export class DeleteDocumentsCommand extends CommandRunner {
 
     if (choice === 'y') {
       const bulk =
-        options.documentsIds.length > 1
+        options.documents.length > 1
           ? (
               await this.inquirer.ask<{ choice: 'y' | 'n' }>(
                 'bulk-questions',
@@ -73,16 +70,17 @@ export class DeleteDocumentsCommand extends CommandRunner {
               )
             ).choice
           : 'n';
+
       try {
         const res =
           bulk === 'y'
             ? await this.documentsService.bulk(
-                options.documentsIds.map((docId) => ({
+                options.documents.map((docId) => ({
                   delete: { _index: options.index, _id: docId },
                 })),
               )
             : await Promise.all(
-                options.documentsIds.map((docId) =>
+                options.documents.map((docId) =>
                   this.documentsService.delete(options.index, docId),
                 ),
               );
