@@ -11,7 +11,7 @@ import { DocumentsService } from '../documents.service';
 @SubCommand({
   name: 'query',
   description: 'query documents',
-  aliases: ['qr'],
+  aliases: ['q'],
 })
 export class QueryDocumentsCommand extends CommandRunner {
   constructor(
