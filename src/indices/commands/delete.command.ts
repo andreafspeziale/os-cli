@@ -7,7 +7,7 @@ import {
 import { LoggerService } from '../../logger';
 import { IndicesService } from '../indices.service';
 
-@SubCommand({ name: 'delete', description: 'delete index', aliases: ['d'] })
+@SubCommand({ name: 'delete', description: 'delete index', aliases: ['dl'] })
 export class DeleteIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,

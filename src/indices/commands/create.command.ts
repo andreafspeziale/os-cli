@@ -41,7 +41,7 @@ export class CreateIndexCommand extends CommandRunner {
 
   @Option({
     flags: '-f, --file, [string]',
-    description: 'create index JSON payload file path, takes always precedence',
+    description: 'create index JSON payload file path',
   })
   parseFile(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
