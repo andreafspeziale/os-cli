@@ -1,5 +1,12 @@
 
 
+## [1.4.0](https://github.com/andreafspeziale/os-cli/compare/1.3.0...1.4.0) (2023-10-19)
+
+
+### Features
+
+* add query command ([bfa7eea](https://github.com/andreafspeziale/os-cli/commit/bfa7eeaacba55a2e4254b5a440bcf1da1c6fe17a))
+
 ## [1.3.0](https://github.com/andreafspeziale/os-cli/compare/1.2.0...1.3.0) (2023-10-18)
 
 
