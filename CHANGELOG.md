@@ -1,5 +1,12 @@
 
 
+## [1.4.1](https://github.com/andreafspeziale/os-cli/compare/1.4.0...1.4.1) (2023-10-19)
+
+
+### Miscellaneous
+
+* align subcommand alias ([0ac5131](https://github.com/andreafspeziale/os-cli/commit/0ac513133b1a1db7c389494a3fee9a5ec0fa3112))
+
 ## [1.4.0](https://github.com/andreafspeziale/os-cli/compare/1.3.0...1.4.0) (2023-10-19)
 
 

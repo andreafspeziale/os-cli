@@ -1,6 +1,6 @@
 {
   "name": "@andreafspeziale/os-cli",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Opinionated and convenient OpenSearch CLI",
   "author": "Andrea Francesco Speziale",
   "private": false,
