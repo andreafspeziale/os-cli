@@ -4,6 +4,7 @@ import {
   DeleteDocumentsCommand,
   DocumentsCommand,
   CreateDocumentsCommand,
+  QueryDocumentsCommand,
 } from './commands';
 import { BulkQuestions } from './questions';
 import { DocumentsService } from './documents.service';
@@ -16,6 +17,7 @@ import { DocumentsService } from './documents.service';
     DeleteQuestions,
     BulkQuestions,
     CreateDocumentsCommand,
+    QueryDocumentsCommand,
   ],
 })
 export class DocumentsModule {}

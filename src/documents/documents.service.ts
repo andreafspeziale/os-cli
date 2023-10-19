@@ -42,4 +42,16 @@ export class DocumentsService {
       })
     ).body;
   }
+
+  async query(
+    index: string,
+    payload: Record<string, unknown>,
+  ): Promise<Record<string, unknown>> {
+    return (
+      await this.osClient.search({
+        index,
+        body: payload,
+      })
+    ).body;
+  }
 }

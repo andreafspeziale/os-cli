@@ -1,27 +1,25 @@
 import { z } from 'zod';
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { SubCommand, CommandRunner, Option } from 'nest-commander';
 import {
   validateAndParsePayloadOrExit,
   validateFileOrExit,
+  ValidJsonPayloadFromString,
 } from '../../common';
-import { ValidJsonPayloadFromString } from '../../common';
-import { IndicesService } from '../indices.service';
+import { LoggerService } from '../../logger';
+import { DocumentsService } from '../documents.service';
 
-@SubCommand({ name: 'update', description: 'update index', aliases: ['u'] })
-export class UpdateIndexCommand extends CommandRunner {
+@SubCommand({
+  name: 'query',
+  description: 'query documents',
+  aliases: ['qr'],
+})
+export class QueryDocumentsCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
-    private readonly indicesService: IndicesService,
-    private readonly inquirer: InquirerService,
+    private readonly documentsService: DocumentsService,
   ) {
     super();
-    this.logger.setContext(UpdateIndexCommand.name);
+    this.logger.setContext(QueryDocumentsCommand.name);
   }
 
   @Option({
@@ -35,7 +33,7 @@ export class UpdateIndexCommand extends CommandRunner {
 
   @Option({
     flags: '-p, --payload, [string]',
-    description: 'inline update index JSON payload',
+    description: 'inline query documents JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
@@ -47,7 +45,7 @@ export class UpdateIndexCommand extends CommandRunner {
 
   @Option({
     flags: '-f, --file, [string]',
-    description: 'update index JSON payload file path',
+    description: 'query documents JSON payload file path',
   })
   parseFile(val: string): Record<string, unknown> {
     return validateAndParsePayloadOrExit(
@@ -77,41 +75,18 @@ export class UpdateIndexCommand extends CommandRunner {
       process.exit(1);
     }
 
-    const { close, open } = await this.inquirer.ask<{
-      close: 'y' | 'n';
-      open?: 'y' | 'n';
-    }>('update-questions', {});
-
     try {
-      if (close === 'y') {
-        const res = await this.indicesService.close(options.index);
-
-        this.logger.log('Index successfully closed', {
-          fn: this.run.name,
-          res,
-        });
-      }
-
-      const res = await this.indicesService.update(
+      const res = await this.documentsService.query(
         options.index,
         options.payload || options.file || {},
       );
 
-      this.logger.log('Index successfully updated', {
+      this.logger.log('Documents successfully queried', {
         fn: this.run.name,
         res,
       });
-
-      if (open === 'y') {
-        const res = await this.indicesService.open(options.index);
-
-        this.logger.log('Index successfully opened', {
-          fn: this.run.name,
-          res,
-        });
-      }
     } catch (error) {
-      this.logger.error('Error while updating index', {
+      this.logger.error('Error while querying documents', {
         fn: this.run.name,
         index: options.index,
         name: error.name,
