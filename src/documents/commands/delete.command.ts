@@ -12,7 +12,7 @@ import { validateAndParsePayloadOrExit } from '../../common';
 @SubCommand({
   name: 'delete',
   description: 'delete document/s',
-  aliases: ['dl'],
+  aliases: ['d'],
 })
 export class DeleteDocumentsCommand extends CommandRunner {
   constructor(
