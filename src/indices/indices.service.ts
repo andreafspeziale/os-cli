@@ -70,6 +70,7 @@ export class IndicesService {
   ): Promise<Record<string, unknown>> {
     return (
       await this.osClient.reindex({
+        wait_for_completion: false,
         body: {
           source: {
             index,

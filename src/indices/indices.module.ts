@@ -11,7 +11,12 @@ import {
   UpdateIndexCommand,
   ReIndexCommand,
 } from './commands';
-import { ReIndexQuestions, UpdateQuestions } from './questions';
+import {
+  ReIndexQuestions,
+  UpdateQuestions,
+  CloseQuestions,
+  OpenQuestions,
+} from './questions';
 import { IndicesService } from './indices.service';
 
 @Module({
@@ -29,6 +34,8 @@ import { IndicesService } from './indices.service';
     UpdateQuestions,
     ReIndexCommand,
     ReIndexQuestions,
+    CloseQuestions,
+    OpenQuestions,
   ],
 })
 export class IndicesModule {}

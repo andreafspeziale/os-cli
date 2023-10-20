@@ -4,6 +4,7 @@ import { Config, parse, mapConfig } from './config';
 import { VersionModule } from './version';
 import { IndicesModule } from './indices';
 import { DocumentsModule } from './documents';
+import { TasksModule } from './tasks';
 import { LoggerModule } from './logger';
 import { OpenSearchModule } from './os';
 
@@ -24,6 +25,7 @@ import { OpenSearchModule } from './os';
     VersionModule,
     IndicesModule,
     DocumentsModule,
+    TasksModule,
   ],
 })
 export class OSCLIModule {}
