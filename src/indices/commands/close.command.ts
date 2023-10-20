@@ -1,4 +1,9 @@
-import { SubCommand, CommandRunner, Option } from 'nest-commander';
+import {
+  SubCommand,
+  CommandRunner,
+  Option,
+  InquirerService,
+} from 'nest-commander';
 import { LoggerService } from '../../logger';
 import { IndicesService } from '../indices.service';
 
@@ -7,6 +12,7 @@ export class CloseIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
+    private readonly inquirer: InquirerService,
   ) {
     super();
     this.logger.setContext(CloseIndexCommand.name);
@@ -28,21 +34,27 @@ export class CloseIndexCommand extends CommandRunner {
       options,
     });
 
-    try {
-      const res = await this.indicesService.close(options.index);
+    const { close } = await this.inquirer.ask<{
+      close: 'y' | 'n';
+    }>('close-questions', {});
 
-      this.logger.log('Index successfully closed', {
-        fn: this.run.name,
-        res,
-      });
-    } catch (error) {
-      this.logger.error('Error while closing index', {
-        fn: this.run.name,
-        index: options.index,
-        name: error.name,
-        body: error.meta.body,
-        statusCode: error.meta.statusCode,
-      });
+    if (close === 'y') {
+      try {
+        const res = await this.indicesService.close(options.index);
+
+        this.logger.log('Index successfully closed', {
+          fn: this.run.name,
+          res,
+        });
+      } catch (error) {
+        this.logger.error('Error while closing index', {
+          fn: this.run.name,
+          index: options.index,
+          name: error.name,
+          body: error.meta.body,
+          statusCode: error.meta.statusCode,
+        });
+      }
     }
   }
 }
