@@ -1,5 +1,19 @@
 
 
+## [1.5.0](https://github.com/andreafspeziale/os-cli/compare/1.4.1...1.5.0) (2023-10-20)
+
+
+### Features
+
+* add close confirmation ([49f203a](https://github.com/andreafspeziale/os-cli/commit/49f203ae9d450ba28f2302437a7f4d8a7a515693))
+* add get task command ([c62c6ff](https://github.com/andreafspeziale/os-cli/commit/c62c6ff771606d73b901e7a1ec7c389bf2e905dd))
+* add open confirmation ([1b30ba6](https://github.com/andreafspeziale/os-cli/commit/1b30ba66e65763d2d0db439019e51b9a05871b75))
+
+
+### Miscellaneous
+
+* reindex wait by default ([9e9f2fd](https://github.com/andreafspeziale/os-cli/commit/9e9f2fd2be51edb63cf548b743d6d221bd65f202))
+
 ## [1.4.1](https://github.com/andreafspeziale/os-cli/compare/1.4.0...1.4.1) (2023-10-19)
 
 
