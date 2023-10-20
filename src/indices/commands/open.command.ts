@@ -1,4 +1,9 @@
-import { SubCommand, CommandRunner, Option } from 'nest-commander';
+import {
+  SubCommand,
+  CommandRunner,
+  Option,
+  InquirerService,
+} from 'nest-commander';
 import { LoggerService } from '../../logger';
 import { IndicesService } from '../indices.service';
 
@@ -7,6 +12,7 @@ export class OpenIndexCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
     private readonly indicesService: IndicesService,
+    private readonly inquirer: InquirerService,
   ) {
     super();
     this.logger.setContext(OpenIndexCommand.name);
@@ -28,21 +34,27 @@ export class OpenIndexCommand extends CommandRunner {
       options,
     });
 
-    try {
-      const res = await this.indicesService.open(options.index);
+    const { open } = await this.inquirer.ask<{
+      open: 'y' | 'n';
+    }>('open-questions', {});
 
-      this.logger.log('Index opened successfully', {
-        fn: this.run.name,
-        res,
-      });
-    } catch (error) {
-      this.logger.error('Error while opening index', {
-        fn: this.run.name,
-        index: options.index,
-        name: error.name,
-        body: error.meta.body,
-        statusCode: error.meta.statusCode,
-      });
+    if (open === 'y') {
+      try {
+        const res = await this.indicesService.open(options.index);
+
+        this.logger.log('Index opened successfully', {
+          fn: this.run.name,
+          res,
+        });
+      } catch (error) {
+        this.logger.error('Error while opening index', {
+          fn: this.run.name,
+          index: options.index,
+          name: error.name,
+          body: error.meta.body,
+          statusCode: error.meta.statusCode,
+        });
+      }
     }
   }
 }
