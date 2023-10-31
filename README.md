@@ -67,7 +67,7 @@ Like the `docker-compose` file there are also some recipes included in the repos
 
 - `npx @andreafspeziale/os-cli i cr -i books -f ./recipes/create-index.json` or `os-cli i cr -i books -f ./recipes/create-index.json`
 - `npx @andreafspeziale/os-cli d cr -i books -f ./recipes/create-documents.json` or `os-cli d cr -i books -f ./recipes/create-documents.json`
-- `npx @andreafspeziale/os-cli d qr -i books -f ./recipes/query.json` or `os-cli d qr -i books -f ./recipes/query.json`
+- `npx @andreafspeziale/os-cli d q -i books -f ./recipes/query.json` or `os-cli d q -i books -f ./recipes/query.json`
 
 ### Configuration
 > For proxy mode check [aws-sigv4-proxy](https://github.com/awslabs/aws-sigv4-proxy)
