@@ -7,7 +7,7 @@ import {
 } from 'nest-commander';
 import { LoggerService } from '../../logger';
 import { DocumentsService } from '../documents.service';
-import { validateAndParsePayloadOrExit } from '../../common';
+import { validateAndParseOrExit } from '../../common';
 
 @SubCommand({
   name: 'delete',
@@ -39,7 +39,7 @@ export class DeleteDocumentsCommand extends CommandRunner {
     required: true,
   })
   parseDocumentsIds(val: string): string[] {
-    return validateAndParsePayloadOrExit(
+    return validateAndParseOrExit(
       val,
       z.string().transform((val) => val.split(',')),
       this.logger,
