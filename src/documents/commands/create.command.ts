@@ -5,7 +5,7 @@ import {
   InquirerService,
 } from 'nest-commander';
 import {
-  validateAndParsePayloadOrExit,
+  validateAndParseOrExit,
   validateFileOrExit,
   ValidJsonPayloadFromString,
 } from '../../common';
@@ -43,11 +43,7 @@ export class CreateDocumentsCommand extends CommandRunner {
   parsePayload(
     val: string,
   ): Record<string, unknown> | Record<string, unknown>[] {
-    return validateAndParsePayloadOrExit(
-      val,
-      ValidJsonPayloadFromString,
-      this.logger,
-    );
+    return validateAndParseOrExit(val, ValidJsonPayloadFromString, this.logger);
   }
 
   @Option({
@@ -55,7 +51,7 @@ export class CreateDocumentsCommand extends CommandRunner {
     description: 'create index JSON payload file path',
   })
   parseFile(val: string): Record<string, unknown> | Record<string, unknown>[] {
-    return validateAndParsePayloadOrExit(
+    return validateAndParseOrExit(
       validateFileOrExit(val, this.logger),
       ValidJsonPayloadFromString,
       this.logger,

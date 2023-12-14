@@ -30,7 +30,7 @@ const validationErrorLogBuilder = (
   };
 };
 
-export const validateAndParsePayloadOrExit = <S extends ZodType>(
+export const validateAndParseOrExit = <S extends ZodType>(
   p: string,
   schema: S,
   logger: LoggerService,
@@ -39,7 +39,7 @@ export const validateAndParsePayloadOrExit = <S extends ZodType>(
     return schema.parse(p);
   } catch (error) {
     const { message, meta } = validationErrorLogBuilder(
-      'validateAndParsePayloadOrExit',
+      'validateAndParseOrExit',
       error,
     );
 

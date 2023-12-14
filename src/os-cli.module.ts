@@ -7,6 +7,7 @@ import { DocumentsModule } from './documents';
 import { TasksModule } from './tasks';
 import { LoggerModule } from './logger';
 import { OpenSearchModule } from './os';
+import { AliasesModule } from './aliases/aliases.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { OpenSearchModule } from './os';
     IndicesModule,
     DocumentsModule,
     TasksModule,
+    AliasesModule,
   ],
 })
 export class OSCLIModule {}

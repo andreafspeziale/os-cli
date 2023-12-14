@@ -6,10 +6,7 @@ import {
   InquirerService,
 } from 'nest-commander';
 import { LoggerService } from '../../logger';
-import {
-  validateAndParsePayloadOrExit,
-  validateFileOrExit,
-} from '../../common';
+import { validateAndParseOrExit, validateFileOrExit } from '../../common';
 import { ValidJsonPayloadFromString } from '../../common';
 import { IndicesService } from '../indices.service';
 
@@ -38,7 +35,7 @@ export class UpdateIndexCommand extends CommandRunner {
     description: 'inline update index JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(
+    return validateAndParseOrExit(
       val,
       ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,
@@ -50,7 +47,7 @@ export class UpdateIndexCommand extends CommandRunner {
     description: 'update index JSON payload file path',
   })
   parseFile(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(
+    return validateAndParseOrExit(
       validateFileOrExit(val, this.logger),
       ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,

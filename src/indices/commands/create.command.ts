@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { SubCommand, CommandRunner, Option } from 'nest-commander';
 import { LoggerService } from '../../logger';
 import {
-  validateAndParsePayloadOrExit,
+  validateAndParseOrExit,
   validateFileOrExit,
   ValidJsonPayloadFromString,
 } from '../../common';
@@ -32,7 +32,7 @@ export class CreateIndexCommand extends CommandRunner {
     description: 'inline create index JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(
+    return validateAndParseOrExit(
       val,
       ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,
@@ -44,7 +44,7 @@ export class CreateIndexCommand extends CommandRunner {
     description: 'create index JSON payload file path',
   })
   parseFile(val: string): Record<string, unknown> {
-    return validateAndParsePayloadOrExit(
+    return validateAndParseOrExit(
       validateFileOrExit(val, this.logger),
       ValidJsonPayloadFromString.pipe(z.object({}).passthrough()),
       this.logger,

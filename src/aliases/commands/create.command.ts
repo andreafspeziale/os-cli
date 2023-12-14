@@ -1,25 +1,34 @@
 import { z } from 'zod';
 import { SubCommand, CommandRunner, Option } from 'nest-commander';
+import { LoggerService } from '../../logger';
+import { AliasesService } from '../aliases.service';
 import {
   validateAndParseOrExit,
   validateFileOrExit,
   ValidJsonPayloadFromString,
 } from '../../common';
-import { LoggerService } from '../../logger';
-import { DocumentsService } from '../documents.service';
 
 @SubCommand({
-  name: 'query',
-  description: 'query documents',
-  aliases: ['q'],
+  name: 'create',
+  description: 'create alias or add index to it',
+  aliases: ['cr'],
 })
-export class QueryDocumentsCommand extends CommandRunner {
+export class CreateAliasCommand extends CommandRunner {
   constructor(
     private readonly logger: LoggerService,
-    private readonly documentsService: DocumentsService,
+    private readonly aliasesService: AliasesService,
   ) {
     super();
-    this.logger.setContext(QueryDocumentsCommand.name);
+    this.logger.setContext(CreateAliasCommand.name);
+  }
+
+  @Option({
+    flags: '-a, --alias, <string>',
+    description: 'alias name',
+    required: true,
+  })
+  parseAlias(val: string): string {
+    return val;
   }
 
   @Option({
@@ -32,8 +41,21 @@ export class QueryDocumentsCommand extends CommandRunner {
   }
 
   @Option({
+    flags: '-wr, --write-index, <boolean>',
+    description: 'is write index',
+    required: false,
+    defaultValue: false,
+  })
+  parseisWriteIndex(val: string): boolean {
+    return (
+      validateAndParseOrExit(val, z.enum(['true', 'false']), this.logger) ===
+      'true'
+    );
+  }
+
+  @Option({
     flags: '-p, --payload, [string]',
-    description: 'inline query documents JSON payload',
+    description: 'inline alias custom filter JSON payload',
   })
   parsePayload(val: string): Record<string, unknown> {
     return validateAndParseOrExit(
@@ -45,7 +67,7 @@ export class QueryDocumentsCommand extends CommandRunner {
 
   @Option({
     flags: '-f, --file, [string]',
-    description: 'query documents JSON payload file path',
+    description: 'alias custom filter JSON payload file path',
   })
   parseFile(val: string): Record<string, unknown> {
     return validateAndParseOrExit(
@@ -58,7 +80,9 @@ export class QueryDocumentsCommand extends CommandRunner {
   async run(
     passedParam: string[],
     options: {
+      alias: string;
       index: string;
+      writeIndex: boolean;
       payload?: Record<string, unknown>;
       file?: Record<string, unknown>;
     },
@@ -69,25 +93,22 @@ export class QueryDocumentsCommand extends CommandRunner {
       options,
     });
 
-    if (!options.payload && !options.file) {
-      process.stdout.write(this.command.helpInformation());
-
-      process.exit(1);
-    }
-
     try {
-      const res = await this.documentsService.query(
+      const res = await this.aliasesService.create(
+        options.alias,
         options.index,
+        options.writeIndex,
         options.payload || options.file || {},
       );
 
-      this.logger.log('Documents successfully queried', {
+      this.logger.log('Alias successfully created', {
         fn: this.run.name,
         res,
       });
     } catch (error) {
-      this.logger.error('Error while querying documents', {
+      this.logger.error('Error while creating alias', {
         fn: this.run.name,
+        alias: options.alias,
         index: options.index,
         name: error.name,
         body: error.meta.body,
