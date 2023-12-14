@@ -1,5 +1,23 @@
 
 
+## [1.6.0](https://github.com/andreafspeziale/os-cli/compare/1.5.0...1.6.0) (2023-12-14)
+
+
+### Features
+
+* add aliases command ([23ecf96](https://github.com/andreafspeziale/os-cli/commit/23ecf96072be0b517cde7e5e0799361a03c6d749))
+
+
+### Bug Fixes
+
+* update dependency reflect-metadata to ^0.2.0 ([923f38b](https://github.com/andreafspeziale/os-cli/commit/923f38bfe1e0b337153b83cee95a19cd4fc4fab8))
+
+
+### Miscellaneous
+
+* update dependency node to v20.10.0 ([2a4a547](https://github.com/andreafspeziale/os-cli/commit/2a4a5474da89ebf10b0538979fcb0adc64675677))
+* update pnpm to v8.12.1 ([bc060a7](https://github.com/andreafspeziale/os-cli/commit/bc060a781cf8fd21735a42f3fdef760981021383))
+
 ## [1.5.0](https://github.com/andreafspeziale/os-cli/compare/1.4.1...1.5.0) (2023-10-20)
 
 
