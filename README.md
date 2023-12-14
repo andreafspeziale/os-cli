@@ -1,12 +1,14 @@
 <div align="center">
   <p>
-    <a href="https://opensearch.org/" target="blank">
+    <!-- <a href="https://opensearch.org/" target="blank", style="text-decoration: none;">
       <img src="./assets/os-logo.png" width="150" alt="OpenSearch Logo" />
-    </a>
+    </a> -->
+    <img src="./assets/os-logo.png" width="150" alt="OpenSearch Logo" />
     <b></b>
-    <a href="https://nestjs.com/" target="blank">
+    <!-- <a href="https://nestjs.com/" target="blank" style="text-decoration: none;">
       <img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" />
-    </a>
+    </a> -->
+    <img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" />
   </p>
   <p>
     <a href="https://opensearch.org/" target="blank">OpenSearch</a> CLI built in <a href="https://github.com/nestjs/nest" target="blank">Nest</a>,<br>
