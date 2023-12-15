@@ -40,8 +40,8 @@ export class GetAliasCommand extends CommandRunner {
         fn: this.run.name,
         alias: options.alias,
         name: error.name,
-        body: error.meta.body,
-        statusCode: error.meta.statusCode,
+        ...(error.meta.body ? { body: error.meta.body } : {}),
+        ...(error.meta.statusCode ? { statusCode: error.meta.statusCode } : {}),
       });
     }
   }
