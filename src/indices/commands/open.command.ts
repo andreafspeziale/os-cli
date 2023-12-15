@@ -51,8 +51,10 @@ export class OpenIndexCommand extends CommandRunner {
           fn: this.run.name,
           index: options.index,
           name: error.name,
-          body: error.meta.body,
-          statusCode: error.meta.statusCode,
+          ...(error.meta.body ? { body: error.meta.body } : {}),
+          ...(error.meta.statusCode
+            ? { statusCode: error.meta.statusCode }
+            : {}),
         });
       }
     }
