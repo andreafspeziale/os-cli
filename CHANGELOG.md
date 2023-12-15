@@ -1,5 +1,18 @@
 
 
+## [1.6.1](https://github.com/andreafspeziale/os-cli/compare/1.6.0...1.6.1) (2023-12-15)
+
+
+### Bug Fixes
+
+* error logging ([d900cdd](https://github.com/andreafspeziale/os-cli/commit/d900cdde23a559737386bdeb843c01bcde9d9b1f))
+
+
+### Miscellaneous
+
+* readme ([e34edac](https://github.com/andreafspeziale/os-cli/commit/e34edac12859e9ca660440944754f6b729c36816))
+* rollback prettier and lint script ([0a9da2c](https://github.com/andreafspeziale/os-cli/commit/0a9da2cd966d5394b5dc4b799573d2178c323a3f))
+
 ## [1.6.0](https://github.com/andreafspeziale/os-cli/compare/1.5.0...1.6.0) (2023-12-14)
 
 
