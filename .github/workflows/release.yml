@@ -17,12 +17,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20.8.1
+          node-version: 20.12.2
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         id: pnpm-install
         with:
-          version: 8
+          version: 9
           run_install: false
       - name: Get pnpm store directory
         id: pnpm-cache
