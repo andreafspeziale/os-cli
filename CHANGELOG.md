@@ -1,5 +1,33 @@
 
 
+## [1.7.0](https://github.com/andreafspeziale/os-cli/compare/1.6.1...1.7.0) (2024-04-25)
+
+
+### Features
+
+* support id prop when indexing ([b422bf1](https://github.com/andreafspeziale/os-cli/commit/b422bf183947f08079d38d100f155e3bfcbd1ebc))
+
+
+### Bug Fixes
+
+* update dependency reflect-metadata to v0.2.2 ([e3130ee](https://github.com/andreafspeziale/os-cli/commit/e3130ee2f9eecfbdf9bdb5207b7a16283de3b37d))
+
+
+### Miscellaneous
+
+* node lts - pn ([ec5f6f2](https://github.com/andreafspeziale/os-cli/commit/ec5f6f2c6a12fd1b37287d6515ad5180e52da067))
+* update commitlint monorepo to v17.8.1 ([0e3402e](https://github.com/andreafspeziale/os-cli/commit/0e3402e230d92dff1d699e3cee01621e93ef4ef5))
+* update dependency @nestjs/cli to v10.3.2 ([e1399a8](https://github.com/andreafspeziale/os-cli/commit/e1399a8a821c9037784de550717d283ffdf8911e))
+* update dependency @release-it/conventional-changelog to v7.0.2 ([9e01336](https://github.com/andreafspeziale/os-cli/commit/9e013366bad125f8e3ae349e2925c614136ccb6c))
+* update dependency @types/node to v20.12.7 ([25865a0](https://github.com/andreafspeziale/os-cli/commit/25865a0ac41da2045f8c1d4edfad3d1021928346))
+* update dependency @types/supertest to v2.0.16 ([74a5f7c](https://github.com/andreafspeziale/os-cli/commit/74a5f7c4523c78f2c52f4d1c173c7bd21505b5a5))
+* update dependency eslint to v8.57.0 ([b5045ab](https://github.com/andreafspeziale/os-cli/commit/b5045ab2f37f4e6d33c57f04d78a0633b7110aa4))
+* update dependency eslint-config-prettier to v8.10.0 ([3d73648](https://github.com/andreafspeziale/os-cli/commit/3d73648fc79582d91415a8da1f620137150c7132))
+* update dependency supertest to v6.3.4 ([97b7541](https://github.com/andreafspeziale/os-cli/commit/97b75416f0fa93e055766c3455f759fae5e79b27))
+* update dependency ts-jest to v29.1.2 ([8c82f2c](https://github.com/andreafspeziale/os-cli/commit/8c82f2c98e5651f6a3f0b97f271fed00cdc1cbfd))
+* update dependency ts-node to v10.9.2 ([caab1c4](https://github.com/andreafspeziale/os-cli/commit/caab1c4920afcd84ac87ad0c973611b8efa3b8f3))
+* update jest monorepo ([4733879](https://github.com/andreafspeziale/os-cli/commit/473387954d781b544ebff111620f7698d351d0ea))
+
 ## [1.6.1](https://github.com/andreafspeziale/os-cli/compare/1.6.0...1.6.1) (2023-12-15)
 
 
