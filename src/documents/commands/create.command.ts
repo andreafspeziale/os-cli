@@ -99,15 +99,33 @@ export class CreateDocumentsCommand extends CommandRunner {
           bulk === 'y'
             ? await this.documentsService.bulk(
                 payload.reduce((acc, curr) => {
-                  acc.push({ index: { _index: options.index } });
-                  acc.push(curr);
+                  if (curr.id) {
+                    const { id, ...rest } = curr;
+
+                    acc.push({ index: { _index: options.index, _id: id } });
+                    acc.push(rest);
+                  } else {
+                    acc.push({ index: { _index: options.index } });
+                    acc.push(curr);
+                  }
+
                   return acc;
                 }, [] as Record<string, unknown>[]),
               )
             : await Promise.all(
-                payload.map((doc) =>
-                  this.documentsService.create(options.index, doc),
-                ),
+                payload.map((doc) => {
+                  if (doc.id) {
+                    const { id, ...rest } = doc;
+
+                    return this.documentsService.create(
+                      options.index,
+                      rest,
+                      id as string,
+                    );
+                  } else {
+                    return this.documentsService.create(options.index, doc);
+                  }
+                }),
               );
       } else {
         res = await this.documentsService.create(options.index, payload);
