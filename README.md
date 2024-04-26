@@ -51,6 +51,8 @@ docker run --rm --env-file .env andreafspeziale/os-cli
 
 > If using a local (docker) OpenSearch image like the one included in the `docker-compose` file be sure to set correctly the `network` option and `OS_HOST` env variable (OS_HOST=http://opensearch:9200) in the above command (`docker run --rm --env-file .env --network os-cli_default andreafspeziale/os-cli`)
 
+> If using the dockerized CLI and you need to use your json payloads as inputs you'll need to mount the folder into the CLI execution context (e.g `docker run --rm --env-file .env -v ./recipes:/opt/os-cli/recipes --network os-cli_default andreafspeziale/os-cli d q -i books -f recipes/query.json`)
+
 ## How to use?
 
 ![](./assets/terminal.gif)
