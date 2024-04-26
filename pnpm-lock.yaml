@@ -25,7 +25,7 @@ importers:
         version: 2.3.0
       nest-commander:
         specifier: ^3.11.0
-        version: 3.11.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(@types/inquirer@8.2.10)
+        version: 3.13.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(@types/inquirer@8.2.10)(typescript@5.1.3)
       reflect-metadata:
         specifier: ^0.2.0
         version: 0.2.2
@@ -280,10 +280,6 @@ packages:
   '@aws-sdk/util-utf8-browser@3.259.0':
     resolution: {integrity: sha512-UvFa/vR+e19XookZF8RzFZBrw2EUkQWxiBW0yYQAhvk3C+QVGl0H3ouca8LDBlBfQKXwmW3huo/59H8rwb1wJw==}
 
-  '@babel/code-frame@7.22.5':
-    resolution: {integrity: sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/code-frame@7.24.2':
     resolution: {integrity: sha512-y5+tLQyV8pg3fsiln67BVLD1P13Eg4lh5RW9mF0zUuvLrv9uIQ4MCL+CRT+FTsBlBjcIan6PGsLcBN0m3ClUyQ==}
     engines: {node: '>=6.9.0'}
@@ -346,20 +342,12 @@ packages:
     resolution: {integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-validator-identifier@7.22.5':
-    resolution: {integrity: sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-validator-option@7.23.5':
     resolution: {integrity: sha512-85ttAOMLsr53VgXkTbkx8oA6YTfT4q7/HzXSLEYmjcSTJPMPQtvq1BD79Byep5xMUYbGRzEpDsjUf3dyp54IKw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helpers@7.24.4':
     resolution: {integrity: sha512-FewdlZbSiwaVGlgT1DPANDuCHaDMiOo+D/IDYRFYjHOuv66xMSJ7fQwwODwRNAPkADIO/z1EoF/l2BCWlWABDw==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/highlight@7.22.5':
-    resolution: {integrity: sha512-BSKlD1hgnedS5XRnGOljZawtag7H1yPfQp0tdNJCHoH6AZ+Pcm9VvkrK59/Yy593Ypg0zMxH2BxD1VPYUQ7UIw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/highlight@7.24.2':
@@ -561,8 +549,16 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@golevelup/nestjs-discovery@3.0.0':
-    resolution: {integrity: sha512-ZvkXtobTKxXB1LJanP/l6Z/Fing88IMBr3uabQpU2IWjfsstjh02qYDSU2cfD6CSmNldX5ewW5Pd+SdK2lU8Sw==}
+  '@fig/complete-commander@3.0.0':
+    resolution: {integrity: sha512-jxiF1O+xiqdM7jECmTTrSO5w35iKsVRcSCz9mu20R4bFgLJS+61VNHw2A3EY7gU1kKlLJye0TmkyTfAoPhIq7A==}
+    peerDependencies:
+      commander: ^11.1.0
+
+  '@golevelup/nestjs-discovery@4.0.0':
+    resolution: {integrity: sha512-iyZLYip9rhVMR0C93vo860xmboRrD5g5F5iEOfpeblGvYSz8ymQrL9RAST7x/Fp3n+TAXSeOLzDIASt+rak68g==}
+    peerDependencies:
+      '@nestjs/common': ^10.x
+      '@nestjs/core': ^10.x
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -1669,8 +1665,8 @@ packages:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
 
-  commander@11.0.0:
-    resolution: {integrity: sha512-9HMlXtt/BNoYr8ooyjjNRdIilOTkVJXB+GhxMTtOKwk0R4j4lS4NpjuqmRxroBfnfTSHQIHQB7wryHhXarNjmQ==}
+  commander@11.1.0:
+    resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
 
   commander@2.20.3:
@@ -2569,10 +2565,6 @@ packages:
     resolution: {integrity: sha512-7PnF4oN3CvZF23ADhA5wRaYEQpJ8qygSkbtTXWBeXWXmEVRXK+1ITciHWwHhsjv1TmW0MgacIv6hEi5pX5NQdA==}
     engines: {node: '>=10'}
 
-  inquirer@8.2.5:
-    resolution: {integrity: sha512-QAgPDQMEgrDssk1XiwwHoOGYF9BAbUcc1+j+FhEvaOt8/cKRqyLn0U5qA6F74fGhTMGxf92pOvPBeh29jQJDTQ==}
-    engines: {node: '>=12.0.0'}
-
   inquirer@8.2.6:
     resolution: {integrity: sha512-M1WuAmb7pn9zdFRtQYk26ZBoY043Sse0wVDdk4Bppr+JOXyQYybdtvK+l9wUibhtjdjvtoiNy8tk+EgsYIUqKg==}
     engines: {node: '>=12.0.0'}
@@ -3317,8 +3309,8 @@ packages:
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  nest-commander@3.11.0:
-    resolution: {integrity: sha512-/i5LiPQh9ldxiML+umybnStB+/WrYBt6vrWxl4JtZHRKHe7MyAHJFDOmVd1U7dO04vfoHyjlHtxqde+eihmteg==}
+  nest-commander@3.13.0:
+    resolution: {integrity: sha512-TnhVCA/4orGtmB3e6M6S8LorPrroPUBrAoGVix3nbfRsyKJNBfzhXamHBhAwWnM+pyQQltzJm3hrx2l7wFgYfA==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
       '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -3587,6 +3579,11 @@ packages:
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+
+  prettier@3.2.5:
+    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+    engines: {node: '>=14'}
     hasBin: true
 
   pretty-format@29.7.0:
@@ -4951,10 +4948,6 @@ snapshots:
     dependencies:
       tslib: 2.6.0
 
-  '@babel/code-frame@7.22.5':
-    dependencies:
-      '@babel/highlight': 7.22.5
-
   '@babel/code-frame@7.24.2':
     dependencies:
       '@babel/highlight': 7.24.2
@@ -5035,8 +5028,6 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.22.20': {}
 
-  '@babel/helper-validator-identifier@7.22.5': {}
-
   '@babel/helper-validator-option@7.23.5': {}
 
   '@babel/helpers@7.24.4':
@@ -5046,12 +5037,6 @@ snapshots:
       '@babel/types': 7.24.0
     transitivePeerDependencies:
       - supports-color
-
-  '@babel/highlight@7.22.5':
-    dependencies:
-      '@babel/helper-validator-identifier': 7.22.5
-      chalk: 2.4.2
-      js-tokens: 4.0.0
 
   '@babel/highlight@7.24.2':
     dependencies:
@@ -5316,8 +5301,15 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@golevelup/nestjs-discovery@3.0.0':
+  '@fig/complete-commander@3.0.0(commander@11.1.0)':
     dependencies:
+      commander: 11.1.0
+      prettier: 3.2.5
+
+  '@golevelup/nestjs-discovery@4.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))':
+    dependencies:
+      '@nestjs/common': 10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1)
+      '@nestjs/core': 10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)
       lodash: 4.17.21
 
   '@humanwhocodes/config-array@0.11.14':
@@ -6734,7 +6726,7 @@ snapshots:
 
   commander@10.0.1: {}
 
-  commander@11.0.0: {}
+  commander@11.1.0: {}
 
   commander@2.20.3: {}
 
@@ -7766,24 +7758,6 @@ snapshots:
 
   ini@2.0.0: {}
 
-  inquirer@8.2.5:
-    dependencies:
-      ansi-escapes: 4.3.2
-      chalk: 4.1.2
-      cli-cursor: 3.1.0
-      cli-width: 3.0.0
-      external-editor: 3.1.0
-      figures: 3.2.0
-      lodash: 4.17.21
-      mute-stream: 0.0.8
-      ora: 5.4.1
-      run-async: 2.4.1
-      rxjs: 7.8.1
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      through: 2.3.8
-      wrap-ansi: 7.0.0
-
   inquirer@8.2.6:
     dependencies:
       ansi-escapes: 4.3.2
@@ -8691,15 +8665,18 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  nest-commander@3.11.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(@types/inquirer@8.2.10):
+  nest-commander@3.13.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(@types/inquirer@8.2.10)(typescript@5.1.3):
     dependencies:
-      '@golevelup/nestjs-discovery': 3.0.0
+      '@fig/complete-commander': 3.0.0(commander@11.1.0)
+      '@golevelup/nestjs-discovery': 4.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))
       '@nestjs/common': 10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@types/inquirer': 8.2.10
-      commander: 11.0.0
-      cosmiconfig: 8.2.0
-      inquirer: 8.2.5
+      commander: 11.1.0
+      cosmiconfig: 8.3.6(typescript@5.1.3)
+      inquirer: 8.2.6
+    transitivePeerDependencies:
+      - typescript
 
   netmask@2.0.2: {}
 
@@ -8910,7 +8887,7 @@ snapshots:
 
   parse-json@5.2.0:
     dependencies:
-      '@babel/code-frame': 7.22.5
+      '@babel/code-frame': 7.24.2
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
@@ -8977,6 +8954,8 @@ snapshots:
       fast-diff: 1.3.0
 
   prettier@2.8.8: {}
+
+  prettier@3.2.5: {}
 
   pretty-format@29.7.0:
     dependencies:
