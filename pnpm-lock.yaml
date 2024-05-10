@@ -22,7 +22,7 @@ importers:
         version: 10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@opensearch-project/opensearch':
         specifier: ^2.3.0
-        version: 2.3.0
+        version: 2.7.0
       nest-commander:
         specifier: ^3.11.0
         version: 3.11.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.0.0(@nestjs/common@10.0.0(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(@types/inquirer@8.2.10)
@@ -838,8 +838,8 @@ packages:
   '@octokit/types@9.3.2':
     resolution: {integrity: sha512-D4iHGTdAnEEVsB8fl95m1hiz7D5YiRdQ9b/OEb3BYRVwbLsGHcRVPz+u+BgRLNk0Q0/4iZCBqDN96j2XNxfXrA==}
 
-  '@opensearch-project/opensearch@2.3.0':
-    resolution: {integrity: sha512-sqMLZj477aoSEcODcTjJCCzm58cbv6BUionZ2jCcBzfSLgHS9jnmNFdVrUy998QOOkoRHIcZ6DAzjInmI9WQzg==}
+  '@opensearch-project/opensearch@2.7.0':
+    resolution: {integrity: sha512-ee4XEU0CSwbThGgKcROmQPwG48QjMaMJzJdgUaGqeIeni7YMJqlZ6g4pbPD7iDE19Y1e2/OEzeW54DE/Fyky2g==}
     engines: {node: '>=10', yarn: ^1.22.10}
 
   '@pkgjs/parseargs@0.11.0':
@@ -5739,7 +5739,7 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 18.0.0
 
-  '@opensearch-project/opensearch@2.3.0':
+  '@opensearch-project/opensearch@2.7.0':
     dependencies:
       aws4: 1.12.0
       debug: 4.3.4
@@ -8562,7 +8562,7 @@ snapshots:
       '@colors/colors': 1.5.0
       '@types/triple-beam': 1.3.2
       fecha: 4.2.3
-      ms: 2.1.2
+      ms: 2.1.3
       safe-stable-stringify: 2.4.3
       triple-beam: 1.4.1
 
