@@ -1,7 +1,7 @@
 import { Client } from '@opensearch-project/opensearch';
+import { InjectOSClient } from '@andreafspeziale/nestjs-search';
 import { Injectable } from '@nestjs/common';
 import { LoggerService } from '../logger';
-import { InjectOSClient } from '../os';
 
 @Injectable()
 export class DocumentsService {
@@ -12,7 +12,7 @@ export class DocumentsService {
     this.logger.setContext(DocumentsService.name);
   }
 
-  async delete(index: string, id: string): Promise<Record<string, unknown>> {
+  async delete(index: string, id: string) {
     return (
       await this.osClient.delete({
         index,
@@ -21,9 +21,7 @@ export class DocumentsService {
     ).body;
   }
 
-  async bulk(
-    payload: Record<string, unknown>[],
-  ): Promise<Record<string, unknown>> {
+  async bulk(payload: Record<string, unknown>[]) {
     return (
       await this.osClient.bulk({
         body: payload,
@@ -31,11 +29,7 @@ export class DocumentsService {
     ).body;
   }
 
-  async create(
-    index: string,
-    payload: Record<string, unknown>,
-    id?: string,
-  ): Promise<Record<string, unknown>> {
+  async create(index: string, payload: Record<string, unknown>, id?: string) {
     return (
       await this.osClient.index({
         index,
@@ -45,10 +39,7 @@ export class DocumentsService {
     ).body;
   }
 
-  async query(
-    index: string,
-    payload: Record<string, unknown>,
-  ): Promise<Record<string, unknown>> {
+  async query(index: string, payload: Record<string, unknown>) {
     return (
       await this.osClient.search({
         index,

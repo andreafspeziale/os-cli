@@ -78,7 +78,7 @@ export class CreateDocumentsCommand extends CommandRunner {
       process.exit(1);
     }
 
-    let res: Record<string, unknown> | Record<string, unknown>[];
+    let res;
     const payload =
       options.payload ||
       (options.file as Record<string, unknown> | Record<string, unknown>[]);

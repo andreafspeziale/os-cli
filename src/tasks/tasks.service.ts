@@ -1,7 +1,7 @@
 import { Client } from '@opensearch-project/opensearch';
+import { InjectOSClient } from '@andreafspeziale/nestjs-search';
 import { Injectable } from '@nestjs/common';
 import { LoggerService } from '../logger';
-import { InjectOSClient } from '../os';
 
 @Injectable()
 export class TasksService {
@@ -12,7 +12,7 @@ export class TasksService {
     this.logger.setContext(TasksService.name);
   }
 
-  async get(id: string): Promise<Record<string, unknown>> {
+  async get(id: string) {
     return (
       await this.osClient.tasks.get({
         task_id: id,
