@@ -1,5 +1,6 @@
+import { Client } from '@opensearch-project/opensearch';
 import { fromZodError } from 'zod-validation-error';
-import { ConnectionMethod } from '../os';
+import { ConnectionMethod } from '@andreafspeziale/nestjs-osearch';
 import { ConfigException } from './config.exceptions';
 import { type Config, type EnvSchema } from './config.interfaces';
 import { envSchema } from './config.schema';
@@ -32,6 +33,7 @@ export const mapConfig = (e: EnvSchema): Config => {
     return {
       os: {
         host: e.OS_HOST,
+        client: Client,
         connectionMethod: e.OS_CONNECTION_METHOD,
         region: e.AWS_REGION,
         credentials: {
@@ -47,6 +49,7 @@ export const mapConfig = (e: EnvSchema): Config => {
     return {
       os: {
         host: e.OS_HOST,
+        client: Client,
         connectionMethod: e.OS_CONNECTION_METHOD,
         region: e.AWS_REGION,
         credentials: {
@@ -61,6 +64,7 @@ export const mapConfig = (e: EnvSchema): Config => {
   return {
     os: {
       host: e.OS_HOST,
+      client: Client,
       connectionMethod: e.OS_CONNECTION_METHOD,
     },
     ...logger,

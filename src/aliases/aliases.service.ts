@@ -1,7 +1,7 @@
 import { Client } from '@opensearch-project/opensearch';
+import { InjectOSClient } from '@andreafspeziale/nestjs-osearch';
 import { Injectable } from '@nestjs/common';
 import { LoggerService } from '../logger';
-import { InjectOSClient } from '../os';
 
 @Injectable()
 export class AliasesService {
@@ -12,7 +12,7 @@ export class AliasesService {
     this.logger.setContext(AliasesService.name);
   }
 
-  async get(alias: string): Promise<Record<string, unknown>> {
+  async get(alias: string) {
     return (await this.osClient.cat.aliases({ name: alias, format: 'json' }))
       .body;
   }
@@ -22,7 +22,7 @@ export class AliasesService {
     index: string,
     isWriteIndex: boolean,
     filter: Record<string, unknown>,
-  ): Promise<Record<string, unknown>> {
+  ) {
     return (
       await this.osClient.indices.putAlias({
         name: alias,
@@ -35,11 +35,11 @@ export class AliasesService {
     ).body;
   }
 
-  async list(): Promise<Record<string, unknown>> {
+  async list() {
     return (await this.osClient.cat.aliases({ format: 'json' })).body;
   }
 
-  async remove(alias: string, index: string): Promise<Record<string, unknown>> {
+  async remove(alias: string, index: string) {
     return (await this.osClient.indices.deleteAlias({ name: alias, index }))
       .body;
   }
