@@ -24,7 +24,7 @@
   "engines": {
     "node": ">=18.16.1"
   },
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.8.0",
   "bin": {
     "os-cli": "dist/os-cli.js"
   },
