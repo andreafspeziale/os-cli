@@ -1,7 +1,7 @@
 import { Client } from '@opensearch-project/opensearch';
 import { InjectOSClient } from '@andreafspeziale/nestjs-search';
 import { Injectable } from '@nestjs/common';
-import { LoggerService } from '../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 
 @Injectable()
 export class DocumentsService {

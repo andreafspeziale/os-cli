@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { SubCommand, CommandRunner, Option } from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import {
   validateAndParseOrExit,
   validateFileOrExit,

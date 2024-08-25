@@ -4,7 +4,7 @@ import {
   Option,
   InquirerService,
 } from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'open', description: 'open index', aliases: ['o'] })

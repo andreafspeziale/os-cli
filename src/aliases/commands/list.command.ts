@@ -1,5 +1,5 @@
 import { SubCommand, CommandRunner } from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { AliasesService } from '../aliases.service';
 
 @SubCommand({ name: 'list', description: 'list aliases', aliases: ['l'] })

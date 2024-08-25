@@ -1,6 +1,6 @@
 import { ZodError, ZodIssue, ZodType } from 'zod';
 import { readFileSync } from 'fs';
-import { LoggerService } from '../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { fromZodError } from 'zod-validation-error';
 
 const validationErrorLogBuilder = (

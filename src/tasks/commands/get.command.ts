@@ -1,5 +1,5 @@
 import { SubCommand, CommandRunner, Option } from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { TasksService } from '../tasks.service';
 
 @SubCommand({

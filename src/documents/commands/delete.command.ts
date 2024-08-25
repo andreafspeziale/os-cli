@@ -5,7 +5,7 @@ import {
   Option,
   InquirerService,
 } from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { DocumentsService } from '../documents.service';
 import { validateAndParseOrExit } from '../../common';
 

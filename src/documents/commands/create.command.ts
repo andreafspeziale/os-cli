@@ -9,7 +9,7 @@ import {
   validateFileOrExit,
   ValidJsonPayloadFromString,
 } from '../../common';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { DocumentsService } from '../documents.service';
 
 @SubCommand({

@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { OSModule } from '@andreafspeziale/nestjs-search';
+import { LoggerModule } from '@andreafspeziale/nestjs-log';
 import { Config, parse, mapConfig } from './config';
 import { VersionModule } from './version';
 import { IndicesModule } from './indices';
 import { DocumentsModule } from './documents';
 import { TasksModule } from './tasks';
-import { LoggerModule } from './logger';
 import { AliasesModule } from './aliases/aliases.module';
 
 @Module({
