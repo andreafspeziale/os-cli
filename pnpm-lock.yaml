@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@andreafspeziale/nestjs-log':
         specifier: ^1.0.0
-        version: 1.0.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)
+        version: 1.1.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)
       '@andreafspeziale/nestjs-search':
         specifier: ^1.0.0
         version: 1.0.0(@aws-sdk/credential-providers@3.635.0(@aws-sdk/client-sso-oidc@3.635.0(@aws-sdk/client-sts@3.635.0)))(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(@opensearch-project/opensearch@3.0.0-beta.5)(reflect-metadata@0.2.2)(zod@3.23.8)
@@ -130,8 +130,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@andreafspeziale/nestjs-log@1.0.0':
-    resolution: {integrity: sha512-Aly0pY0Kg5z6qwp0/tVQ2zsB4la8HECmSRZFeiPasZ+ivSzZNYXxy77mztxQrHSWvqPik986pD1EiX8xkWbvKg==}
+  '@andreafspeziale/nestjs-log@1.1.0':
+    resolution: {integrity: sha512-vH4R1HhvBNnX+TIPuuiShiW8FsGKHcVWqcEBURdTp8XzhXVYbI6JgxdF4qun4kMHvf+/kOU/wMzaPJeJ2ED0ow==}
     engines: {node: '>=20.16.0'}
     peerDependencies:
       '@nestjs/common': ^10.0.0
@@ -139,6 +139,7 @@ packages:
       '@nestjs/platform-fastify': ^10.0.0
       class-transformer: ^0.5.1
       class-validator: ^0.14.1
+      joi: ^17.13.3
       reflect-metadata: ^0.2.2
       rxjs: ^7.8.1
       zod: ^3.0.0
@@ -150,6 +151,8 @@ packages:
       class-transformer:
         optional: true
       class-validator:
+        optional: true
+      joi:
         optional: true
       rxjs:
         optional: true
@@ -4571,7 +4574,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@andreafspeziale/nestjs-log@1.0.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)':
+  '@andreafspeziale/nestjs-log@1.1.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)':
     dependencies:
       '@nestjs/common': 10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1)
       cls-rtracer: 2.6.3
