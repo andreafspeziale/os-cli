@@ -13,7 +13,7 @@ importers:
         version: 1.0.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)
       '@andreafspeziale/nestjs-search':
         specifier: ^1.0.0
-        version: 1.0.0(@aws-sdk/credential-providers@3.635.0(@aws-sdk/client-sso-oidc@3.635.0(@aws-sdk/client-sts@3.635.0)))(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(@opensearch-project/opensearch@3.0.0-beta.5)(reflect-metadata@0.2.2)(zod@3.23.8)
+        version: 1.0.0(@aws-sdk/credential-providers@3.635.0(@aws-sdk/client-sso-oidc@3.635.0(@aws-sdk/client-sts@3.635.0)))(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(@opensearch-project/opensearch@3.0.0-beta.8)(reflect-metadata@0.2.2)(zod@3.23.8)
       '@aws-sdk/credential-providers':
         specifier: ^3.635.0
         version: 3.635.0(@aws-sdk/client-sso-oidc@3.635.0(@aws-sdk/client-sts@3.635.0))
@@ -28,7 +28,7 @@ importers:
         version: 10.4.13(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@opensearch-project/opensearch':
         specifier: ^3.0.0-beta.5
-        version: 3.0.0-beta.5
+        version: 3.0.0-beta.8
       nest-commander:
         specifier: ^3.11.0
         version: 3.15.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.13(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1))(@types/inquirer@8.2.10)(typescript@5.5.4)
@@ -888,9 +888,9 @@ packages:
   '@octokit/types@9.3.2':
     resolution: {integrity: sha512-D4iHGTdAnEEVsB8fl95m1hiz7D5YiRdQ9b/OEb3BYRVwbLsGHcRVPz+u+BgRLNk0Q0/4iZCBqDN96j2XNxfXrA==}
 
-  '@opensearch-project/opensearch@3.0.0-beta.5':
-    resolution: {integrity: sha512-RI4WBX9ttP8FQBI8YqqorITirdFRbAF1rnuz/wuPKP82damo912YqnfyLa9A/Jy0V4PN+kcgR4q5yCR+QRPKxA==}
-    engines: {node: '>=18', yarn: ^1.22.10}
+  '@opensearch-project/opensearch@3.0.0-beta.8':
+    resolution: {integrity: sha512-ErYb6iMkMOv3wPe7l9B5MX/czSSE0AIUvDp9ZKTBropnz7DNoFLs7h8uCtJkY7ZrKezvwvnYn0c9RQKnEPhwZg==}
+    engines: {node: '>=14', yarn: ^1.22.10}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -1462,8 +1462,8 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
-  aws4@1.13.1:
-    resolution: {integrity: sha512-u5w79Rd7SU4JaIlA/zFqG+gOiuq25q5VLyZ8E+ijJeILuTxVzZgp2CaGw/UTw6pXYN9XMO9yiqj/nEHmhTG5CA==}
+  aws4@1.13.2:
+    resolution: {integrity: sha512-lHe62zvbTB5eEABUVi/AwVh0ZKY9rMMDhmm+eeyuuUQbQ3+J+fONVQOZyj+DdrvD4BY33uYniyRJ4UJIaSKAfw==}
 
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
@@ -1929,6 +1929,15 @@ packages:
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  debug@4.4.0:
+    resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -3080,8 +3089,8 @@ packages:
   json-stringify-safe@5.0.1:
     resolution: {integrity: sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==}
 
-  json11@1.1.2:
-    resolution: {integrity: sha512-5r1RHT1/Gr/jsI/XZZj/P6F11BKM8xvTaftRuiLkQI9Z2PFDukM82Ysxw8yDszb3NJP/NKnRlSGmhUdG99rlBw==}
+  json11@2.0.0:
+    resolution: {integrity: sha512-VuKJKUSPEJape+daTm70Nx7vdcdorf4S6LCyN2z0jUVH4UrQ4ftXo2kC0bnHpCREmxHuHqCNVPA75BjI3CB6Ag==}
     hasBin: true
 
   json5@2.2.3:
@@ -4581,10 +4590,10 @@ snapshots:
       rxjs: 7.8.1
       zod: 3.23.8
 
-  '@andreafspeziale/nestjs-search@1.0.0(@aws-sdk/credential-providers@3.635.0(@aws-sdk/client-sso-oidc@3.635.0(@aws-sdk/client-sts@3.635.0)))(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(@opensearch-project/opensearch@3.0.0-beta.5)(reflect-metadata@0.2.2)(zod@3.23.8)':
+  '@andreafspeziale/nestjs-search@1.0.0(@aws-sdk/credential-providers@3.635.0(@aws-sdk/client-sso-oidc@3.635.0(@aws-sdk/client-sts@3.635.0)))(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(@opensearch-project/opensearch@3.0.0-beta.8)(reflect-metadata@0.2.2)(zod@3.23.8)':
     dependencies:
       '@nestjs/common': 10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1)
-      '@opensearch-project/opensearch': 3.0.0-beta.5
+      '@opensearch-project/opensearch': 3.0.0-beta.8
       reflect-metadata: 0.2.2
     optionalDependencies:
       '@aws-sdk/credential-providers': 3.635.0(@aws-sdk/client-sso-oidc@3.635.0(@aws-sdk/client-sts@3.635.0))
@@ -5059,7 +5068,7 @@ snapshots:
       '@babel/traverse': 7.25.3
       '@babel/types': 7.25.2
       convert-source-map: 2.0.0
-      debug: 4.3.7
+      debug: 4.4.0
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -5229,7 +5238,7 @@ snapshots:
       '@babel/parser': 7.25.3
       '@babel/template': 7.25.0
       '@babel/types': 7.25.2
-      debug: 4.3.7
+      debug: 4.4.0
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -5824,12 +5833,12 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 18.1.1
 
-  '@opensearch-project/opensearch@3.0.0-beta.5':
+  '@opensearch-project/opensearch@3.0.0-beta.8':
     dependencies:
-      aws4: 1.13.1
-      debug: 4.3.6
+      aws4: 1.13.2
+      debug: 4.4.0
       hpagent: 1.2.0
-      json11: 1.1.2
+      json11: 2.0.0
       ms: 2.1.3
       secure-json-parse: 2.7.0
     transitivePeerDependencies:
@@ -6444,7 +6453,7 @@ snapshots:
 
   agent-base@7.1.1:
     dependencies:
-      debug: 4.3.7
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -6571,7 +6580,7 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  aws4@1.13.1: {}
+  aws4@1.13.2: {}
 
   babel-jest@29.7.0(@babel/core@7.25.2):
     dependencies:
@@ -7102,6 +7111,10 @@ snapshots:
       ms: 2.1.2
 
   debug@4.3.7:
+    dependencies:
+      ms: 2.1.3
+
+  debug@4.4.0:
     dependencies:
       ms: 2.1.3
 
@@ -7652,7 +7665,7 @@ snapshots:
     dependencies:
       basic-ftp: 5.0.5
       data-uri-to-buffer: 6.0.2
-      debug: 4.3.7
+      debug: 4.4.0
       fs-extra: 11.2.0
     transitivePeerDependencies:
       - supports-color
@@ -7850,7 +7863,7 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.7
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -7862,7 +7875,7 @@ snapshots:
   https-proxy-agent@7.0.5:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.7
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -8165,7 +8178,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.7
+      debug: 4.4.0
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -8542,7 +8555,7 @@ snapshots:
 
   json-stringify-safe@5.0.1: {}
 
-  json11@1.1.2: {}
+  json11@2.0.0: {}
 
   json5@2.2.3: {}
 
@@ -8986,7 +8999,7 @@ snapshots:
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
       agent-base: 7.1.1
-      debug: 4.3.7
+      debug: 4.4.0
       get-uri: 6.0.3
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.5
@@ -9114,7 +9127,7 @@ snapshots:
   proxy-agent@6.3.1:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.7
+      debug: 4.4.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.5
       lru-cache: 7.18.3
@@ -9425,7 +9438,7 @@ snapshots:
   socks-proxy-agent@8.0.4:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.7
+      debug: 4.4.0
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -9565,7 +9578,7 @@ snapshots:
     dependencies:
       component-emitter: 1.3.1
       cookiejar: 2.1.4
-      debug: 4.3.7
+      debug: 4.4.0
       fast-safe-stringify: 2.1.1
       form-data: 4.0.0
       formidable: 2.1.2
