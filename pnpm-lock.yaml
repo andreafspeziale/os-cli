@@ -13,7 +13,7 @@ importers:
         version: 1.2.0(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)(zod@3.23.8)
       '@andreafspeziale/nestjs-search':
         specifier: ^1.0.0
-        version: 1.0.0(@aws-sdk/credential-providers@3.758.0)(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@opensearch-project/opensearch@3.4.0)(reflect-metadata@0.2.2)(zod@3.23.8)
+        version: 1.1.1(@aws-sdk/credential-providers@3.758.0)(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@opensearch-project/opensearch@3.4.0)(reflect-metadata@0.2.2)(zod@3.23.8)
       '@aws-sdk/credential-providers':
         specifier: ^3.635.0
         version: 3.758.0
@@ -156,13 +156,13 @@ packages:
       zod:
         optional: true
 
-  '@andreafspeziale/nestjs-search@1.0.0':
-    resolution: {integrity: sha512-Fi7KbRkEontQM9wniXJ+9PNgFKR08s5FQyMRJKKccRvfo5ebjEqVEr5Uq/nFz4WsU5nY+qlXiByk/9cXjKV3Jg==}
+  '@andreafspeziale/nestjs-search@1.1.1':
+    resolution: {integrity: sha512-nSY/6zd62GT9dK1DhDyhdG3u7Bg0fu63EVJbYtQWNC+znFcplqDRAbkyyOsO7299/Pqeeu8dEsRooiDocphTHg==}
     engines: {node: '>=20.16.0'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.629.0
-      '@nestjs/common': ^10.0.0
-      '@nestjs/terminus': ^10.0.0
+      '@nestjs/common': ^10.0.0 || ^11.0.0
+      '@nestjs/terminus': ^10.0.0 || ^11.0.0
       '@opensearch-project/opensearch': ^3.0.0-beta.5
       class-transformer: ^0.5.1
       class-validator: ^0.14.1
@@ -4631,7 +4631,7 @@ snapshots:
       rxjs: 7.8.2
       zod: 3.23.8
 
-  '@andreafspeziale/nestjs-search@1.0.0(@aws-sdk/credential-providers@3.758.0)(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@opensearch-project/opensearch@3.4.0)(reflect-metadata@0.2.2)(zod@3.23.8)':
+  '@andreafspeziale/nestjs-search@1.1.1(@aws-sdk/credential-providers@3.758.0)(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@opensearch-project/opensearch@3.4.0)(reflect-metadata@0.2.2)(zod@3.23.8)':
     dependencies:
       '@nestjs/common': 10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@opensearch-project/opensearch': 3.4.0
