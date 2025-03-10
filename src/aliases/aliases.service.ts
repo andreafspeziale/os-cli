@@ -13,8 +13,7 @@ export class AliasesService {
   }
 
   async get(alias: string) {
-    return (await this.osClient.cat.aliases({ name: alias, format: 'json' }))
-      .body;
+    return (await this.osClient.cat.aliases({ name: alias, format: 'json' })).body;
   }
 
   async create(
@@ -40,7 +39,6 @@ export class AliasesService {
   }
 
   async remove(alias: string, index: string) {
-    return (await this.osClient.indices.deleteAlias({ name: alias, index }))
-      .body;
+    return (await this.osClient.indices.deleteAlias({ name: alias, index })).body;
   }
 }

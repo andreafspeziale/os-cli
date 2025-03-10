@@ -34,10 +34,7 @@ export class RemoveAliasCommand extends CommandRunner {
     return val;
   }
 
-  async run(
-    passedParam: string[],
-    options: { alias: string; index: string },
-  ): Promise<void> {
+  async run(passedParam: string[], options: { alias: string; index: string }): Promise<void> {
     this.logger.debug('Running command...', {
       fn: this.run.name,
       passedParam,
@@ -45,10 +42,7 @@ export class RemoveAliasCommand extends CommandRunner {
     });
 
     try {
-      const res = await this.aliasesService.remove(
-        options.alias,
-        options.index,
-      );
+      const res = await this.aliasesService.remove(options.alias, options.index);
 
       this.logger.log('Alias successfully updated by removal', {
         fn: this.run.name,

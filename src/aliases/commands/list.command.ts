@@ -12,10 +12,7 @@ export class ListAliasCommand extends CommandRunner {
     this.logger.setContext(ListAliasCommand.name);
   }
 
-  async run(
-    passedParam: string[],
-    options?: Record<string, unknown>,
-  ): Promise<void> {
+  async run(passedParam: string[], options?: Record<string, unknown>): Promise<void> {
     this.logger.debug('Running command...', {
       fn: this.run.name,
       passedParam,

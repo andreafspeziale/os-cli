@@ -38,10 +38,7 @@ export const validateAndParseOrExit = <S extends ZodType>(
   try {
     return schema.parse(p);
   } catch (error) {
-    const { message, meta } = validationErrorLogBuilder(
-      'validateAndParseOrExit',
-      error,
-    );
+    const { message, meta } = validationErrorLogBuilder('validateAndParseOrExit', error);
 
     logger.error(message, meta);
 
@@ -49,17 +46,11 @@ export const validateAndParseOrExit = <S extends ZodType>(
   }
 };
 
-export const validateFileOrExit = (
-  p: string,
-  logger: LoggerService,
-): string | never => {
+export const validateFileOrExit = (p: string, logger: LoggerService): string | never => {
   try {
     return readFileSync(p, 'utf-8');
   } catch (error) {
-    const { message, meta } = validationErrorLogBuilder(
-      'validateFileOrExit',
-      error,
-    );
+    const { message, meta } = validationErrorLogBuilder('validateFileOrExit', error);
 
     logger.error(message, meta);
 

@@ -1,9 +1,4 @@
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
+import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
 import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { IndicesService } from '../indices.service';
 
@@ -52,9 +47,7 @@ export class CloseIndexCommand extends CommandRunner {
           index: options.index,
           name: error.name,
           ...(error.meta.body ? { body: error.meta.body } : {}),
-          ...(error.meta.statusCode
-            ? { statusCode: error.meta.statusCode }
-            : {}),
+          ...(error.meta.statusCode ? { statusCode: error.meta.statusCode } : {}),
         });
       }
     }

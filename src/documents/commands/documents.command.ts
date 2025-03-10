@@ -7,18 +7,15 @@ import { QueryDocumentsCommand } from './query.command';
   name: 'documents',
   description: 'opensearch documents related commands',
   aliases: ['d'],
-  subCommands: [
-    DeleteDocumentsCommand,
-    CreateDocumentsCommand,
-    QueryDocumentsCommand,
-  ],
+  subCommands: [DeleteDocumentsCommand, CreateDocumentsCommand, QueryDocumentsCommand],
 })
 export class DocumentsCommand extends CommandRunner {
   constructor() {
     super();
   }
 
-  async run(): Promise<void> {
+  run(): Promise<void> {
     process.stdout.write(this.command.helpInformation());
+    return Promise.resolve();
   }
 }

@@ -9,7 +9,7 @@
 /src
 /test
 /ignore
-.eslintrc.js
+eslint.config.mjs
 .gitignore
 .nvmrc
 .prettierrc

@@ -47,10 +47,7 @@ export class CreateAliasCommand extends CommandRunner {
     defaultValue: false,
   })
   parseisWriteIndex(val: string): boolean {
-    return (
-      validateAndParseOrExit(val, z.enum(['true', 'false']), this.logger) ===
-      'true'
-    );
+    return validateAndParseOrExit(val, z.enum(['true', 'false']), this.logger) === 'true';
   }
 
   @Option({

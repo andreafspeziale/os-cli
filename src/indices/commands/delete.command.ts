@@ -1,9 +1,4 @@
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
+import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
 import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { IndicesService } from '../indices.service';
 
@@ -34,9 +29,7 @@ export class DeleteIndexCommand extends CommandRunner {
       options,
     });
 
-    const choice = (
-      await this.inquirer.ask<{ choice: 'y' | 'n' }>('delete-questions', {})
-    ).choice;
+    const choice = (await this.inquirer.ask<{ choice: 'y' | 'n' }>('delete-questions', {})).choice;
 
     if (choice === 'y') {
       try {
@@ -52,9 +45,7 @@ export class DeleteIndexCommand extends CommandRunner {
           index: options.index,
           name: error.name,
           ...(error.meta.body ? { body: error.meta.body } : {}),
-          ...(error.meta.statusCode
-            ? { statusCode: error.meta.statusCode }
-            : {}),
+          ...(error.meta.statusCode ? { statusCode: error.meta.statusCode } : {}),
         });
       }
     }

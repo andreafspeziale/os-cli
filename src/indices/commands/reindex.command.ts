@@ -1,9 +1,4 @@
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
+import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
 import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { IndicesService } from '../indices.service';
 
@@ -55,10 +50,7 @@ export class ReIndexCommand extends CommandRunner {
 
     if (reindex === 'y') {
       try {
-        const res = await this.indicesService.reindex(
-          options.index,
-          options.targetIndex,
-        );
+        const res = await this.indicesService.reindex(options.index, options.targetIndex);
 
         this.logger.log('Reindex successfully started', {
           fn: this.run.name,
@@ -70,9 +62,7 @@ export class ReIndexCommand extends CommandRunner {
           index: options.index,
           name: error.name,
           ...(error.meta.body ? { body: error.meta.body } : {}),
-          ...(error.meta.statusCode
-            ? { statusCode: error.meta.statusCode }
-            : {}),
+          ...(error.meta.statusCode ? { statusCode: error.meta.statusCode } : {}),
         });
       }
     }

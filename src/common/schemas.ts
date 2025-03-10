@@ -16,6 +16,4 @@ export const ValidJsonPayloadFromString = z
       message: 'Expecting valid JSON {} | [{}] string, received invalid',
     },
   )
-  .transform<Record<string, unknown> | Record<string, unknown>[]>(
-    (val: string) => JSON.parse(val),
-  );
+  .transform<Record<string, unknown> | Record<string, unknown>[]>((val: string) => JSON.parse(val));

@@ -8,19 +8,15 @@ import { RemoveAliasCommand } from './remove.command';
   name: 'aliases',
   description: 'opensearch aliases related commands',
   aliases: ['a'],
-  subCommands: [
-    GetAliasCommand,
-    CreateAliasCommand,
-    ListAliasCommand,
-    RemoveAliasCommand,
-  ],
+  subCommands: [GetAliasCommand, CreateAliasCommand, ListAliasCommand, RemoveAliasCommand],
 })
 export class AliasCommand extends CommandRunner {
   constructor() {
     super();
   }
 
-  async run(): Promise<void> {
+  run(): Promise<void> {
     process.stdout.write(this.command.helpInformation());
+    return Promise.resolve();
   }
 }

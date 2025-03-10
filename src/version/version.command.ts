@@ -1,5 +1,5 @@
 import { Command, CommandRunner } from 'nest-commander';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const { version } = require('../../package.json');
 
 @Command({
@@ -12,7 +12,9 @@ export class VersionCommand extends CommandRunner {
     super();
   }
 
-  async run(): Promise<void> {
+  run(): Promise<void> {
+    // eslint-disable-next-line no-console
     console.log(version);
+    return Promise.resolve();
   }
 }
