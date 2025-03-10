@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@andreafspeziale/nestjs-log':
         specifier: ^1.0.0
-        version: 1.1.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)
+        version: 1.2.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)
       '@andreafspeziale/nestjs-search':
         specifier: ^1.0.0
         version: 1.0.0(@aws-sdk/credential-providers@3.758.0)(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(@opensearch-project/opensearch@3.0.0-beta.8)(reflect-metadata@0.2.2)(zod@3.23.8)
@@ -130,13 +130,13 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@andreafspeziale/nestjs-log@1.1.0':
-    resolution: {integrity: sha512-vH4R1HhvBNnX+TIPuuiShiW8FsGKHcVWqcEBURdTp8XzhXVYbI6JgxdF4qun4kMHvf+/kOU/wMzaPJeJ2ED0ow==}
+  '@andreafspeziale/nestjs-log@1.2.0':
+    resolution: {integrity: sha512-g5yb7v6DeomE+RgHBL6aPEDI6dq5hC/rlozXr24BQy0drNF8MjXY5o1OYhqOc0t25dcyMwj2GZLvw2Ct+1CHEw==}
     engines: {node: '>=20.16.0'}
     peerDependencies:
-      '@nestjs/common': ^10.0.0
-      '@nestjs/platform-express': ^10.0.0
-      '@nestjs/platform-fastify': ^10.0.0
+      '@nestjs/common': ^10.0.0 || ^11.0.0
+      '@nestjs/platform-express': ^10.0.0 || ^11.0.0
+      '@nestjs/platform-fastify': ^10.0.0 || ^11.0.0
       class-transformer: ^0.5.1
       class-validator: ^0.14.1
       joi: ^17.13.3
@@ -4576,7 +4576,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@andreafspeziale/nestjs-log@1.1.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)':
+  '@andreafspeziale/nestjs-log@1.2.0(@nestjs/common@10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(zod@3.23.8)':
     dependencies:
       '@nestjs/common': 10.4.13(reflect-metadata@0.2.2)(rxjs@7.8.1)
       cls-rtracer: 2.6.3
