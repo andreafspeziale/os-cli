@@ -12,8 +12,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)(zod@3.24.2)
       '@andreafspeziale/nestjs-search':
-        specifier: ^1.1.1
-        version: 1.1.1(@aws-sdk/credential-providers@3.768.0)(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(@opensearch-project/opensearch@3.4.0)(reflect-metadata@0.2.2)(zod@3.24.2)
+        specifier: ^2.0.0
+        version: 2.0.0(@aws-sdk/credential-providers@3.768.0)(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@3.24.2)
       '@aws-sdk/credential-providers':
         specifier: ^3.758.0
         version: 3.768.0
@@ -26,9 +26,6 @@ importers:
       '@nestjs/core':
         specifier: ^11.0.11
         version: 11.0.11(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@opensearch-project/opensearch':
-        specifier: ^3.4.0
-        version: 3.4.0
       nest-commander:
         specifier: ^3.16.1
         version: 3.17.0(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.0.11(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@types/inquirer@8.2.10)(typescript@5.8.2)
@@ -165,26 +162,19 @@ packages:
       zod:
         optional: true
 
-  '@andreafspeziale/nestjs-search@1.1.1':
-    resolution: {integrity: sha512-nSY/6zd62GT9dK1DhDyhdG3u7Bg0fu63EVJbYtQWNC+znFcplqDRAbkyyOsO7299/Pqeeu8dEsRooiDocphTHg==}
+  '@andreafspeziale/nestjs-search@2.0.0':
+    resolution: {integrity: sha512-RPdKbK/LZGxnFe9yf6GBRS7eJ10mRW+9NOkB/3HaP06M927NIrmnSqxJrSdW6ffquTjRhmu1BQIzSkadfRDqbg==}
     engines: {node: '>=20.16.0'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.629.0
       '@nestjs/common': ^10.0.0 || ^11.0.0
       '@nestjs/terminus': ^10.0.0 || ^11.0.0
-      '@opensearch-project/opensearch': ^3.0.0-beta.5
-      class-transformer: ^0.5.1
-      class-validator: ^0.14.1
       reflect-metadata: ^0.2.0
       zod: ^3.0.0
     peerDependenciesMeta:
       '@aws-sdk/credential-providers':
         optional: true
       '@nestjs/terminus':
-        optional: true
-      class-transformer:
-        optional: true
-      class-validator:
         optional: true
       zod:
         optional: true
@@ -4566,7 +4556,7 @@ snapshots:
       rxjs: 7.8.2
       zod: 3.24.2
 
-  '@andreafspeziale/nestjs-search@1.1.1(@aws-sdk/credential-providers@3.768.0)(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(@opensearch-project/opensearch@3.4.0)(reflect-metadata@0.2.2)(zod@3.24.2)':
+  '@andreafspeziale/nestjs-search@2.0.0(@aws-sdk/credential-providers@3.768.0)(@nestjs/common@11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@3.24.2)':
     dependencies:
       '@nestjs/common': 11.0.11(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@opensearch-project/opensearch': 3.4.0
@@ -4574,6 +4564,8 @@ snapshots:
     optionalDependencies:
       '@aws-sdk/credential-providers': 3.768.0
       zod: 3.24.2
+    transitivePeerDependencies:
+      - supports-color
 
   '@angular-devkit/core@19.1.8(chokidar@4.0.3)':
     dependencies:
