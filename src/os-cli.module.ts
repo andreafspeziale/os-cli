@@ -7,7 +7,8 @@ import { VersionModule } from './version';
 import { IndicesModule } from './indices';
 import { DocumentsModule } from './documents';
 import { TasksModule } from './tasks';
-import { AliasesModule } from './aliases/aliases.module';
+import { AliasesModule } from './aliases';
+import { AnalyzeModule } from './analyzer';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { AliasesModule } from './aliases/aliases.module';
     DocumentsModule,
     TasksModule,
     AliasesModule,
+    AnalyzeModule,
   ],
 })
 export class OSCLIModule {}
