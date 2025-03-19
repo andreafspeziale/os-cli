@@ -1,10 +1,5 @@
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'open', description: 'open index', aliases: ['o'] })
@@ -52,9 +47,7 @@ export class OpenIndexCommand extends CommandRunner {
           index: options.index,
           name: error.name,
           ...(error.meta.body ? { body: error.meta.body } : {}),
-          ...(error.meta.statusCode
-            ? { statusCode: error.meta.statusCode }
-            : {}),
+          ...(error.meta.statusCode ? { statusCode: error.meta.statusCode } : {}),
         });
       }
     }

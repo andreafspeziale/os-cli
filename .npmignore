@@ -8,7 +8,8 @@
 /recipes
 /src
 /test
-.eslintrc.js
+/ignore
+eslint.config.mjs
 .gitignore
 .nvmrc
 .prettierrc
@@ -19,4 +20,5 @@ pnpm-lock.yaml
 renovate.json
 tsconfig.build.json
 tsconfig.json
-andreafspeziale-os-cli-*
+Dockerfile
+andreafspeziale-*

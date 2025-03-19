@@ -1,26 +1,25 @@
-import { Client } from '@opensearch-project/opensearch';
+import { InjectOSClient, type OSTypes } from '@andreafspeziale/nestjs-search';
 import { Injectable } from '@nestjs/common';
-import { LoggerService } from '../logger';
-import { InjectOSClient } from '../os';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 
 @Injectable()
 export class IndicesService {
   constructor(
     private readonly logger: LoggerService,
-    @InjectOSClient() private readonly osClient: Client,
+    @InjectOSClient() private readonly osClient: OSTypes.Client,
   ) {
     this.logger.setContext(IndicesService.name);
   }
 
-  async list(): Promise<Record<string, unknown>> {
+  async list() {
     return (await this.osClient.cat.indices({ format: 'json' })).body;
   }
 
-  async get(index: string): Promise<Record<string, unknown>> {
+  async get(index: string) {
     return (await this.osClient.indices.get({ index })).body;
   }
 
-  async close(index: string): Promise<Record<string, unknown>> {
+  async close(index: string) {
     return (
       await this.osClient.indices.close({
         index,
@@ -28,7 +27,7 @@ export class IndicesService {
     ).body;
   }
 
-  async open(index: string): Promise<Record<string, unknown>> {
+  async open(index: string) {
     return (
       await this.osClient.indices.open({
         index,
@@ -36,14 +35,11 @@ export class IndicesService {
     ).body;
   }
 
-  async delete(index: string): Promise<Record<string, unknown>> {
+  async delete(index: string) {
     return (await this.osClient.indices.delete({ index })).body;
   }
 
-  async create(
-    index: string,
-    payload: Record<string, unknown>,
-  ): Promise<Record<string, unknown>> {
+  async create(index: string, payload: Record<string, unknown>) {
     return (
       await this.osClient.indices.create({
         index,
@@ -52,10 +48,7 @@ export class IndicesService {
     ).body;
   }
 
-  async update(
-    index: string,
-    payload: Record<string, unknown>,
-  ): Promise<Record<string, unknown>> {
+  async update(index: string, payload: Record<string, unknown>) {
     return (
       await this.osClient.indices.putSettings({
         index,
@@ -64,10 +57,7 @@ export class IndicesService {
     ).body;
   }
 
-  async reindex(
-    index: string,
-    targetIndex: string,
-  ): Promise<Record<string, unknown>> {
+  async reindex(index: string, targetIndex: string) {
     return (
       await this.osClient.reindex({
         wait_for_completion: false,

@@ -1,5 +1,5 @@
 import { SubCommand, CommandRunner } from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { AliasesService } from '../aliases.service';
 
 @SubCommand({ name: 'list', description: 'list aliases', aliases: ['l'] })
@@ -12,10 +12,7 @@ export class ListAliasCommand extends CommandRunner {
     this.logger.setContext(ListAliasCommand.name);
   }
 
-  async run(
-    passedParam: string[],
-    options?: Record<string, unknown>,
-  ): Promise<void> {
+  async run(passedParam: string[], options?: Record<string, unknown>): Promise<void> {
     this.logger.debug('Running command...', {
       fn: this.run.name,
       passedParam,

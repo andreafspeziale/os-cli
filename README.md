@@ -51,6 +51,8 @@ docker run --rm --env-file .env andreafspeziale/os-cli
 
 > If using a local (docker) OpenSearch image like the one included in the `docker-compose` file be sure to set correctly the `network` option and `OS_HOST` env variable (OS_HOST=http://opensearch:9200) in the above command (`docker run --rm --env-file .env --network os-cli_default andreafspeziale/os-cli`)
 
+> If using the dockerized CLI and you need to use your json payloads as inputs you'll need to mount the folder into the CLI execution context (e.g `docker run --rm --env-file .env -v ./recipes:/opt/os-cli/recipes --network os-cli_default andreafspeziale/os-cli d q -i books -f recipes/query.json`)
+
 ## How to use?
 
 ![](./assets/terminal.gif)
@@ -78,14 +80,14 @@ The CLI leverages environment variables in order to set connection and logging o
 
 | Name                        | Required                                                  | Default                          | Description                                    | Values                                                          |
 |-----------------------------|-----------------------------------------------------------|----------------------------------|------------------------------------------------|-----------------------------------------------------------------|
-| OS_HOST                     | when `OS_CONNECTION_METHOD` is NOT _local_ | _proxy_      | `http://localhost:(9200 | 8080)` | OpenSearch connection host                     | -                                                               |
+| OS_HOST                     | when `OS_CONNECTION_METHOD` is NOT _local_ or _proxy_      | `http://localhost:(9200 or 8080)` | OpenSearch connection host                     | -                                                               |
 | OS_CONNECTION_METHOD        | Yes                                                       | -                                | How you want to connect to OpenSearch          | [`local`, `proxy`, `serviceAccount`, `credentials`]             |
-| AWS_REGION                  | only when `OS_CONNECTION_METHOD` is NOT _local_ | _proxy_ | -                                | OpenSearch AWS connection region               | -                                                               |
+| AWS_REGION                  | only when `OS_CONNECTION_METHOD` is NOT _local_ or _proxy_ | -                                | OpenSearch AWS connection region               | -                                                               |
 | AWS_ROLE_ARN                | only when `OS_CONNECTION_METHOD` is _serviceAccount_      | -                                | AWS role ARN for assume role connection        | -                                                               |
 | AWS_WEB_IDENTITY_TOKEN_FILE | only when `OS_CONNECTION_METHOD` is _serviceAccount_      | -                                | AWS web identity token file                    | -                                                               |
 | AWS_ACCESS_KEY_ID           | only when `OS_CONNECTION_METHOD` is _credentials_         | -                                | AWS access key id for canonical connection     | -                                                               |
 | AWS_SECRET_ACCESS_KEY       | only when `OS_CONNECTION_METHOD` is _credentials_         | -                                | AWS secret access key for canonical connection | -                                                               |
-| LOGGER_LEVEL                | No                                                        | `info`                           | Which logs will be displayed                   | [`silent`, `error`, `warn`, `info`, `http`, `verbose`, `debug`] |
+| LOGGER_LEVEL                | No                                                        | `debug`                           | Which logs will be displayed                   | [`silent`, `error`, `warn`, `info`, `http`, `verbose`, `debug`] |
 | LOGGER_PRETTY               | No                                                        | `true`                           | Boolean to enable/disable logs formatting      | `true`, `false`                                                 |
 | LOGGER_REDACT               | No                                                        | `''`                             | Removed specified words from logs              | -                                                               |
 

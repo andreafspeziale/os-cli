@@ -1,20 +1,18 @@
-import { Client } from '@opensearch-project/opensearch';
+import { InjectOSClient, type OSTypes } from '@andreafspeziale/nestjs-search';
 import { Injectable } from '@nestjs/common';
-import { LoggerService } from '../logger';
-import { InjectOSClient } from '../os';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 
 @Injectable()
 export class AliasesService {
   constructor(
     private readonly logger: LoggerService,
-    @InjectOSClient() private readonly osClient: Client,
+    @InjectOSClient() private readonly osClient: OSTypes.Client,
   ) {
     this.logger.setContext(AliasesService.name);
   }
 
-  async get(alias: string): Promise<Record<string, unknown>> {
-    return (await this.osClient.cat.aliases({ name: alias, format: 'json' }))
-      .body;
+  async get(alias: string) {
+    return (await this.osClient.cat.aliases({ name: alias, format: 'json' })).body;
   }
 
   async create(
@@ -22,7 +20,7 @@ export class AliasesService {
     index: string,
     isWriteIndex: boolean,
     filter: Record<string, unknown>,
-  ): Promise<Record<string, unknown>> {
+  ) {
     return (
       await this.osClient.indices.putAlias({
         name: alias,
@@ -35,12 +33,11 @@ export class AliasesService {
     ).body;
   }
 
-  async list(): Promise<Record<string, unknown>> {
+  async list() {
     return (await this.osClient.cat.aliases({ format: 'json' })).body;
   }
 
-  async remove(alias: string, index: string): Promise<Record<string, unknown>> {
-    return (await this.osClient.indices.deleteAlias({ name: alias, index }))
-      .body;
+  async remove(alias: string, index: string) {
+    return (await this.osClient.indices.deleteAlias({ name: alias, index })).body;
   }
 }

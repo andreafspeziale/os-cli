@@ -30,5 +30,6 @@ export class IndexCommand extends CommandRunner {
 
   async run(): Promise<void> {
     process.stdout.write(this.command.helpInformation());
+    return Promise.resolve();
   }
 }

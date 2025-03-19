@@ -1,15 +1,10 @@
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
+import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
 import {
   validateAndParseOrExit,
   validateFileOrExit,
   ValidJsonPayloadFromString,
 } from '../../common';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { DocumentsService } from '../documents.service';
 
 @SubCommand({
@@ -40,9 +35,7 @@ export class CreateDocumentsCommand extends CommandRunner {
     flags: '-p, --payload, [string]',
     description: 'inline create index JSON payload',
   })
-  parsePayload(
-    val: string,
-  ): Record<string, unknown> | Record<string, unknown>[] {
+  parsePayload(val: string): Record<string, unknown> | Record<string, unknown>[] {
     return validateAndParseOrExit(val, ValidJsonPayloadFromString, this.logger);
   }
 
@@ -78,50 +71,43 @@ export class CreateDocumentsCommand extends CommandRunner {
       process.exit(1);
     }
 
-    let res: Record<string, unknown> | Record<string, unknown>[];
+    let res;
     const payload =
-      options.payload ||
-      (options.file as Record<string, unknown> | Record<string, unknown>[]);
+      options.payload || (options.file as Record<string, unknown> | Record<string, unknown>[]);
 
     try {
       if (Array.isArray(payload)) {
         const bulk =
           payload.length > 1
-            ? (
-                await this.inquirer.ask<{ choice: 'y' | 'n' }>(
-                  'bulk-questions',
-                  {},
-                )
-              ).choice
+            ? (await this.inquirer.ask<{ choice: 'y' | 'n' }>('bulk-questions', {})).choice
             : 'n';
 
         res =
           bulk === 'y'
             ? await this.documentsService.bulk(
-                payload.reduce((acc, curr) => {
-                  if (curr.id) {
-                    const { id, ...rest } = curr;
+                payload.reduce(
+                  (acc, curr) => {
+                    if (curr.id) {
+                      const { id, ...rest } = curr;
 
-                    acc.push({ index: { _index: options.index, _id: id } });
-                    acc.push(rest);
-                  } else {
-                    acc.push({ index: { _index: options.index } });
-                    acc.push(curr);
-                  }
+                      acc.push({ index: { _index: options.index, _id: id } });
+                      acc.push(rest);
+                    } else {
+                      acc.push({ index: { _index: options.index } });
+                      acc.push(curr);
+                    }
 
-                  return acc;
-                }, [] as Record<string, unknown>[]),
+                    return acc;
+                  },
+                  [] as Record<string, unknown>[],
+                ),
               )
             : await Promise.all(
                 payload.map((doc) => {
                   if (doc.id) {
                     const { id, ...rest } = doc;
 
-                    return this.documentsService.create(
-                      options.index,
-                      rest,
-                      id as string,
-                    );
+                    return this.documentsService.create(options.index, rest, id as string);
                   } else {
                     return this.documentsService.create(options.index, doc);
                   }

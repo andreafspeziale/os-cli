@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { SubCommand, CommandRunner, Option } from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { AliasesService } from '../aliases.service';
 import {
   validateAndParseOrExit,
@@ -47,10 +47,7 @@ export class CreateAliasCommand extends CommandRunner {
     defaultValue: false,
   })
   parseisWriteIndex(val: string): boolean {
-    return (
-      validateAndParseOrExit(val, z.enum(['true', 'false']), this.logger) ===
-      'true'
-    );
+    return validateAndParseOrExit(val, z.enum(['true', 'false']), this.logger) === 'true';
   }
 
   @Option({

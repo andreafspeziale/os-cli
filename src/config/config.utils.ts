@@ -1,5 +1,5 @@
 import { fromZodError } from 'zod-validation-error';
-import { ConnectionMethod } from '../os';
+import { ConnectionMethod } from '@andreafspeziale/nestjs-search';
 import { ConfigException } from './config.exceptions';
 import { type Config, type EnvSchema } from './config.interfaces';
 import { envSchema } from './config.schema';

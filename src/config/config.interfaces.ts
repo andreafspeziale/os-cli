@@ -1,11 +1,8 @@
 import type { z } from 'zod';
+import { LoggerConfig } from '@andreafspeziale/nestjs-log';
+import { OSConfig } from '@andreafspeziale/nestjs-search';
 import type { envSchema } from './config.schema';
-import { LoggerModuleOptions } from '../logger';
-import { OpenSearchModuleOptions } from '../os';
 
 export type EnvSchema = z.infer<typeof envSchema>;
 
-export interface Config {
-  os: OpenSearchModuleOptions;
-  logger: LoggerModuleOptions;
-}
+export type Config = OSConfig & LoggerConfig;

@@ -12,7 +12,8 @@ export class TasksCommand extends CommandRunner {
     super();
   }
 
-  async run(): Promise<void> {
+  run(): Promise<void> {
     process.stdout.write(this.command.helpInformation());
+    return Promise.resolve();
   }
 }

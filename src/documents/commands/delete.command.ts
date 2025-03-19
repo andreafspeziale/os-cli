@@ -1,11 +1,6 @@
 import { z } from 'zod';
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { DocumentsService } from '../documents.service';
 import { validateAndParseOrExit } from '../../common';
 
@@ -46,29 +41,19 @@ export class DeleteDocumentsCommand extends CommandRunner {
     );
   }
 
-  async run(
-    passedParam: string[],
-    options: { index: string; documents: string[] },
-  ): Promise<void> {
+  async run(passedParam: string[], options: { index: string; documents: string[] }): Promise<void> {
     this.logger.debug('Running command...', {
       fn: this.run.name,
       passedParam,
       options,
     });
 
-    const choice = (
-      await this.inquirer.ask<{ choice: 'y' | 'n' }>('delete-questions', {})
-    ).choice;
+    const choice = (await this.inquirer.ask<{ choice: 'y' | 'n' }>('delete-questions', {})).choice;
 
     if (choice === 'y') {
       const bulk =
         options.documents.length > 1
-          ? (
-              await this.inquirer.ask<{ choice: 'y' | 'n' }>(
-                'bulk-questions',
-                {},
-              )
-            ).choice
+          ? (await this.inquirer.ask<{ choice: 'y' | 'n' }>('bulk-questions', {})).choice
           : 'n';
 
       try {
@@ -95,9 +80,7 @@ export class DeleteDocumentsCommand extends CommandRunner {
           index: options.index,
           name: error.name,
           ...(error.meta.body ? { body: error.meta.body } : {}),
-          ...(error.meta.statusCode
-            ? { statusCode: error.meta.statusCode }
-            : {}),
+          ...(error.meta.statusCode ? { statusCode: error.meta.statusCode } : {}),
         });
       }
     }

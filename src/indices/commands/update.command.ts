@@ -1,11 +1,6 @@
 import { z } from 'zod';
-import {
-  SubCommand,
-  CommandRunner,
-  Option,
-  InquirerService,
-} from 'nest-commander';
-import { LoggerService } from '../../logger';
+import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
+import { LoggerService } from '@andreafspeziale/nestjs-log';
 import { validateAndParseOrExit, validateFileOrExit } from '../../common';
 import { ValidJsonPayloadFromString } from '../../common';
 import { IndicesService } from '../indices.service';
