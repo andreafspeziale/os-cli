@@ -1,5 +1,4 @@
-import { Client } from '@opensearch-project/opensearch';
-import { InjectOSClient } from '@andreafspeziale/nestjs-search';
+import { InjectOSClient, type OSTypes } from '@andreafspeziale/nestjs-search';
 import { Injectable } from '@nestjs/common';
 import { LoggerService } from '@andreafspeziale/nestjs-log';
 
@@ -7,7 +6,7 @@ import { LoggerService } from '@andreafspeziale/nestjs-log';
 export class AliasesService {
   constructor(
     private readonly logger: LoggerService,
-    @InjectOSClient() private readonly osClient: Client,
+    @InjectOSClient() private readonly osClient: OSTypes.Client,
   ) {
     this.logger.setContext(AliasesService.name);
   }
