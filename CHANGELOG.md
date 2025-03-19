@@ -1,5 +1,61 @@
 
 
+## [1.8.0](https://github.com/andreafspeziale/os-cli/compare/1.7.0...1.8.0) (2025-03-19)
+
+
+### Features
+
+* add nestjs-log ([ff6fbc5](https://github.com/andreafspeziale/os-cli/commit/ff6fbc5cf84ba850d82c7be1be86662b44ab03c2))
+* os module from nestjs-search package ([825a7fd](https://github.com/andreafspeziale/os-cli/commit/825a7fd8c38903647101d5292a9dc50c6779183d))
+
+
+### Bug Fixes
+
+* dockerfile base image name ([bfafa88](https://github.com/andreafspeziale/os-cli/commit/bfafa883dc596cc947b1001a7bd9586e0e6a95d9))
+* remove winston ([34e4419](https://github.com/andreafspeziale/os-cli/commit/34e44190b9de1cbd0222e5701591788720d270ef))
+* update dependency @andreafspeziale/nestjs-log to v1.1.0 ([c5e4127](https://github.com/andreafspeziale/os-cli/commit/c5e41277eae205ee1f00e846147ef00620ed1543))
+* update dependency @andreafspeziale/nestjs-log to v1.2.0 ([3dd0aa7](https://github.com/andreafspeziale/os-cli/commit/3dd0aa785b26558656b14b826e09bb33ac003ee7))
+* update dependency @andreafspeziale/nestjs-search to v1.1.1 ([497a0d8](https://github.com/andreafspeziale/os-cli/commit/497a0d87dec9fd4ef2f3d7f8edae2b07ec2ff568))
+* update dependency @aws-sdk/credential-providers to v3.637.0 ([ac70c8a](https://github.com/andreafspeziale/os-cli/commit/ac70c8ae98b7ccc488eddff7c1832128cdb16476))
+* update dependency @aws-sdk/credential-providers to v3.699.0 ([e499c11](https://github.com/andreafspeziale/os-cli/commit/e499c11cdd4bd2740cea8a31ec98492f287e2ace))
+* update dependency @aws-sdk/credential-providers to v3.758.0 ([985d611](https://github.com/andreafspeziale/os-cli/commit/985d6112236e9c46d8c4e7a495616bc6d787b2cc))
+* update dependency @aws-sdk/credential-providers to v3.768.0 ([f65bc12](https://github.com/andreafspeziale/os-cli/commit/f65bc12af0ca1086d9ef0c29fd5645b3c770d94a))
+* update dependency @nestjs/config to v3.3.0 ([b762862](https://github.com/andreafspeziale/os-cli/commit/b76286255a09f4fc31b2c684d62096a712ff100c))
+* update dependency @opensearch-project/opensearch to v3.0.0-beta.8 ([c876816](https://github.com/andreafspeziale/os-cli/commit/c876816ceff9b8983ebf89d405ec4c5a14539a31))
+* update dependency @opensearch-project/opensearch to v3.4.0 ([a87cec4](https://github.com/andreafspeziale/os-cli/commit/a87cec4b6b66966eb4eceb17fbe229ce92c794a3))
+* update dependency nest-commander to v3.16.1 ([d6db5f2](https://github.com/andreafspeziale/os-cli/commit/d6db5f27e8af67fae10e36532c8c6c53b5fbd97e))
+* update dependency nest-commander to v3.17.0 ([be748af](https://github.com/andreafspeziale/os-cli/commit/be748af4e98c26705daa721acd87ca0190945e35))
+* update dependency winston to v3.17.0 ([df00951](https://github.com/andreafspeziale/os-cli/commit/df009517451f140d0ee4dc4f47ca23c0266e6201))
+* update dependency zod to v3.24.2 ([8a10b74](https://github.com/andreafspeziale/os-cli/commit/8a10b74c5af3abbef8b6e1f53cda0042cd1101a1))
+* update nest monorepo to v10.4.9 ([2060e6f](https://github.com/andreafspeziale/os-cli/commit/2060e6f5975b58813e80eb822cf9bb910bdd7a64))
+* update nest monorepo to v11.0.12 ([c1107b0](https://github.com/andreafspeziale/os-cli/commit/c1107b0684ee155e6f0568f3191b6048c0862251))
+
+
+### Miscellaneous
+
+* add manual docker build and push trigger ([911c5f9](https://github.com/andreafspeziale/os-cli/commit/911c5f93915cb0edbeb6165f12ea9616e1b387bb))
+* ignore ([d198940](https://github.com/andreafspeziale/os-cli/commit/d198940a4cbb1d6ec0c9e6f6b28cb41d208421e7))
+* lint etc. minors ([0ca8ba5](https://github.com/andreafspeziale/os-cli/commit/0ca8ba5d3d214774354eb006c26e8cc1e77ded91))
+* nestjs 11 ([c0d5a47](https://github.com/andreafspeziale/os-cli/commit/c0d5a4712f6236ea3642caa9096c1dbead1827d7))
+* nodejs upgrade ([ec00aee](https://github.com/andreafspeziale/os-cli/commit/ec00aeea3907f306dddfdf465f23a4e0f8b4802b))
+* pn update ([3580acd](https://github.com/andreafspeziale/os-cli/commit/3580acd7a6280815971ccc7437174abb290e9125))
+* update dependency @types/jest to v29.5.14 ([9c93278](https://github.com/andreafspeziale/os-cli/commit/9c93278b57196397e0fbfa51b972968c166554c6))
+* update dependency @types/node to v20.17.24 ([46ec155](https://github.com/andreafspeziale/os-cli/commit/46ec155f7011384bf654252f3ee6f6c3000f3758))
+* update dependency @types/node to v20.17.9 ([9b97e9b](https://github.com/andreafspeziale/os-cli/commit/9b97e9befb40bfc4a257cd430cb61e104816dc86))
+* update dependency eslint to v8.57.1 ([4c33556](https://github.com/andreafspeziale/os-cli/commit/4c335564d87f1529dfd5ec6f99494060a456c38d))
+* update dependency lint-staged to v15.5.0 ([7dfa8e3](https://github.com/andreafspeziale/os-cli/commit/7dfa8e3624e620a49c9489bff55dc81bb5ae8486))
+* update dependency ts-jest to v29.2.5 ([2002647](https://github.com/andreafspeziale/os-cli/commit/2002647cee8820fe0dbc3f39f11ff442fe1132cd))
+* update dependency ts-jest to v29.2.6 ([a7841ec](https://github.com/andreafspeziale/os-cli/commit/a7841ec414c0497c8655e6d13fde71d3f6882278))
+* update dependency ts-loader to v9.5.2 ([93872b4](https://github.com/andreafspeziale/os-cli/commit/93872b4d2523d8acc9d79c5cf8bc585dbf8c97f3))
+* update dependency typescript to v5.7.2 ([2a82eaa](https://github.com/andreafspeziale/os-cli/commit/2a82eaaeec9b3b2c102f1e2bb434eb2e9053b1c5))
+* update dependency typescript to v5.8.2 ([7e8452f](https://github.com/andreafspeziale/os-cli/commit/7e8452f6afd7283479803a24f8ab6978ffe978d9))
+* update dependency typescript-eslint to v8.26.1 ([2de16d8](https://github.com/andreafspeziale/os-cli/commit/2de16d8728b7a0bed26212dc50fdf60a2f74a097))
+* update nest monorepo to v10.4.8 ([729538e](https://github.com/andreafspeziale/os-cli/commit/729538e381351c8ec3974c9358d57c9c4da87160))
+* update node.js ([3afeb53](https://github.com/andreafspeziale/os-cli/commit/3afeb53041826bc693b81cf99f45b59bb68edb6a))
+* update node.js to v20.18.3 ([a3a0f7b](https://github.com/andreafspeziale/os-cli/commit/a3a0f7bec5b43948227ceeedb3234c988fa47d80))
+* update pnpm to v9.15.9 ([913e053](https://github.com/andreafspeziale/os-cli/commit/913e0532c1a03d8a34d2c596417fafede12ad58d))
+* update readme ([4ffde1f](https://github.com/andreafspeziale/os-cli/commit/4ffde1ffe775950bb4745ec8a0e40625288e0637))
+
 ## [1.7.0](https://github.com/andreafspeziale/os-cli/compare/1.6.1...1.7.0) (2024-04-25)
 
 
