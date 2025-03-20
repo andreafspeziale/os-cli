@@ -1,5 +1,18 @@
 
 
+## [1.8.1](https://github.com/andreafspeziale/os-cli/compare/1.8.0...1.8.1) (2025-03-20)
+
+
+### Bug Fixes
+
+* shebang ([9746bf8](https://github.com/andreafspeziale/os-cli/commit/9746bf8288ec6b3aa16d5272ecc4c3f44974f9bd))
+* update nest monorepo to v11.0.12 ([93e2bec](https://github.com/andreafspeziale/os-cli/commit/93e2bec5ff1888979beae66d1bf672e5f04348a8))
+
+
+### Miscellaneous
+
+* update dependency typescript-eslint to v8.27.0 ([3b33350](https://github.com/andreafspeziale/os-cli/commit/3b333509ac911bb26fe30f9701ef59c8e3ddf73b))
+
 ## [1.8.0](https://github.com/andreafspeziale/os-cli/compare/1.7.0...1.8.0) (2025-03-19)
 
 
