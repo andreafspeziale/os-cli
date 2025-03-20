@@ -1,5 +1,12 @@
 
 
+## [1.9.0](https://github.com/andreafspeziale/os-cli/compare/1.8.1...1.9.0) (2025-03-20)
+
+
+### Features
+
+* add update index flag ([d7c81bf](https://github.com/andreafspeziale/os-cli/commit/d7c81bfa700f8829c970d91af69fed68347f676a))
+
 ## [1.8.1](https://github.com/andreafspeziale/os-cli/compare/1.8.0...1.8.1) (2025-03-20)
 
 
