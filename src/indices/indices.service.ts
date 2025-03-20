@@ -48,12 +48,17 @@ export class IndicesService {
     ).body;
   }
 
-  async update(index: string, payload: Record<string, unknown>) {
+  async update(index: string, payload: Record<string, unknown>, type: 'mapping' | 'settings') {
     return (
-      await this.osClient.indices.putSettings({
-        index,
-        body: payload,
-      })
+      type === 'mapping'
+        ? await this.osClient.indices.putMapping({
+            index,
+            body: payload,
+          })
+        : await this.osClient.indices.putSettings({
+            index,
+            body: payload,
+          })
     ).body;
   }
 

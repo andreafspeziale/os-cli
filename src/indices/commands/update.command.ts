@@ -26,6 +26,16 @@ export class UpdateIndexCommand extends CommandRunner {
   }
 
   @Option({
+    flags: '-t, --type, <string>',
+    description: 'update type',
+    choices: ['mapping', 'settings'],
+    required: true,
+  })
+  parseUpdateType(val: string): string {
+    return validateAndParseOrExit(val, z.enum(['mapping', 'settings']), this.logger);
+  }
+
+  @Option({
     flags: '-p, --payload, [string]',
     description: 'inline update index JSON payload',
   })
@@ -53,6 +63,7 @@ export class UpdateIndexCommand extends CommandRunner {
     passedParam: string[],
     options: {
       index: string;
+      type: 'mapping' | 'settings';
       payload?: Record<string, unknown>;
       file?: Record<string, unknown>;
     },
@@ -69,35 +80,49 @@ export class UpdateIndexCommand extends CommandRunner {
       process.exit(1);
     }
 
-    const { close, open } = await this.inquirer.ask<{
-      close: 'y' | 'n';
-      open?: 'y' | 'n';
-    }>('update-questions', {});
-
     try {
-      if (close === 'y') {
-        const res = await this.indicesService.close(options.index);
+      if (options.type === 'settings') {
+        const { close, open } = await this.inquirer.ask<{
+          close: 'y' | 'n';
+          open?: 'y' | 'n';
+        }>('update-questions', {});
 
-        this.logger.log('Index successfully closed', {
+        if (close === 'y') {
+          const res = await this.indicesService.close(options.index);
+
+          this.logger.log('Index successfully closed', {
+            fn: this.run.name,
+            res,
+          });
+        }
+
+        const res = await this.indicesService.update(
+          options.index,
+          options.payload || options.file || {},
+          options.type,
+        );
+
+        this.logger.log('Index successfully updated', {
           fn: this.run.name,
           res,
         });
-      }
 
-      const res = await this.indicesService.update(
-        options.index,
-        options.payload || options.file || {},
-      );
+        if (open === 'y') {
+          const res = await this.indicesService.open(options.index);
 
-      this.logger.log('Index successfully updated', {
-        fn: this.run.name,
-        res,
-      });
+          this.logger.log('Index successfully opened', {
+            fn: this.run.name,
+            res,
+          });
+        }
+      } else {
+        const res = await this.indicesService.update(
+          options.index,
+          options.payload || options.file || {},
+          options.type,
+        );
 
-      if (open === 'y') {
-        const res = await this.indicesService.open(options.index);
-
-        this.logger.log('Index successfully opened', {
+        this.logger.log('Index successfully updated', {
           fn: this.run.name,
           res,
         });
