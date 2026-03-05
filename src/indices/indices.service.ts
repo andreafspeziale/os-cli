@@ -62,16 +62,29 @@ export class IndicesService {
     ).body;
   }
 
-  async reindex(index: string, targetIndex: string) {
+  async reindex(options: {
+    index: string;
+    targetIndex: string;
+    slices?: number | 'auto';
+    requestsPerSecond?: number;
+    maxDocs?: number;
+    batchSize?: number;
+  }) {
     return (
       await this.osClient.reindex({
         wait_for_completion: false,
+        ...(options.slices !== undefined && { slices: options.slices }),
+        ...(options.requestsPerSecond !== undefined && {
+          requests_per_second: options.requestsPerSecond,
+        }),
+        ...(options.maxDocs !== undefined && { max_docs: options.maxDocs }),
         body: {
+          ...(options.batchSize !== undefined && { size: options.batchSize }),
           source: {
-            index,
+            index: options.index,
           },
           dest: {
-            index: targetIndex,
+            index: options.targetIndex,
           },
         },
       })

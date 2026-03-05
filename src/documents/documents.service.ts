@@ -11,6 +11,24 @@ export class DocumentsService {
     this.logger.setContext(DocumentsService.name);
   }
 
+  async exists(index: string, id: string) {
+    return (
+      await this.osClient.exists({
+        index,
+        id,
+      })
+    ).body;
+  }
+
+  async get(index: string, id: string) {
+    return (
+      await this.osClient.get({
+        index,
+        id,
+      })
+    ).body;
+  }
+
   async delete(index: string, id: string) {
     return (
       await this.osClient.delete({

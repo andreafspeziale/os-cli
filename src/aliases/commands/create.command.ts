@@ -41,7 +41,7 @@ export class CreateAliasCommand extends CommandRunner {
   }
 
   @Option({
-    flags: '-wr, --write-index, <boolean>',
+    flags: '-wr, --write-index, [boolean]',
     description: 'is write index',
     required: false,
     defaultValue: false,
