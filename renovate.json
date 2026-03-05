@@ -7,12 +7,9 @@
       "dependencyDashboardApproval": true
     },
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
   ],
-  "extends": [
-    "config:base",
-    ":semanticCommitScopeDisabled"
-  ]
+  "extends": ["config:base", ":semanticCommitScopeDisabled"]
 }
