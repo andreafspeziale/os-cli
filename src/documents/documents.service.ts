@@ -11,6 +11,15 @@ export class DocumentsService {
     this.logger.setContext(DocumentsService.name);
   }
 
+  async get(index: string, id: string) {
+    return (
+      await this.osClient.get({
+        index,
+        id,
+      })
+    ).body;
+  }
+
   async delete(index: string, id: string) {
     return (
       await this.osClient.delete({

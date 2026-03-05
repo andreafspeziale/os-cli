@@ -1,4 +1,5 @@
 import { Command, CommandRunner } from 'nest-commander';
+import { GetDocumentCommand } from './get.command';
 import { DeleteDocumentsCommand } from './delete.command';
 import { CreateDocumentsCommand } from './create.command';
 import { QueryDocumentsCommand } from './query.command';
@@ -7,7 +8,12 @@ import { QueryDocumentsCommand } from './query.command';
   name: 'documents',
   description: 'opensearch documents related commands',
   aliases: ['d'],
-  subCommands: [DeleteDocumentsCommand, CreateDocumentsCommand, QueryDocumentsCommand],
+  subCommands: [
+    GetDocumentCommand,
+    DeleteDocumentsCommand,
+    CreateDocumentsCommand,
+    QueryDocumentsCommand,
+  ],
 })
 export class DocumentsCommand extends CommandRunner {
   constructor() {
