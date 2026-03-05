@@ -1,4 +1,5 @@
 import { Command, CommandRunner } from 'nest-commander';
+import { ExistsDocumentCommand } from './exists.command';
 import { GetDocumentCommand } from './get.command';
 import { DeleteDocumentsCommand } from './delete.command';
 import { CreateDocumentsCommand } from './create.command';
@@ -9,6 +10,7 @@ import { QueryDocumentsCommand } from './query.command';
   description: 'opensearch documents related commands',
   aliases: ['d'],
   subCommands: [
+    ExistsDocumentCommand,
     GetDocumentCommand,
     DeleteDocumentsCommand,
     CreateDocumentsCommand,
