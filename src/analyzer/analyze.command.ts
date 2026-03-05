@@ -29,7 +29,6 @@ export class AnalyzeCommand extends CommandRunner {
   @Option({
     flags: '-a, --analyzer, [string]',
     description: 'analyzer name',
-    defaultValue: 'default',
   })
   parseAnalyzer(val: string): string {
     return val;
@@ -71,7 +70,7 @@ export class AnalyzeCommand extends CommandRunner {
     passedParam: string[],
     options: {
       index?: string;
-      analyzer: string;
+      analyzer?: string;
       text?: string;
       payload?: Record<string, unknown>;
       file?: Record<string, unknown>;
@@ -99,7 +98,7 @@ export class AnalyzeCommand extends CommandRunner {
     try {
       const res = await this.analyzeService.analyze(payload);
 
-      this.logger.log('Index successfully created', {
+      this.logger.log('Text successfully analyzed', {
         fn: this.run.name,
         res,
       });
