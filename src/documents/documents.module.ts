@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { DeleteQuestions } from '../common';
 import {
+  GetDocumentCommand,
   DeleteDocumentsCommand,
   DocumentsCommand,
   CreateDocumentsCommand,
@@ -13,6 +14,7 @@ import { DocumentsService } from './documents.service';
   providers: [
     DocumentsService,
     DocumentsCommand,
+    GetDocumentCommand,
     DeleteDocumentsCommand,
     DeleteQuestions,
     BulkQuestions,
