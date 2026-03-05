@@ -110,7 +110,7 @@ export AWS_SECRET_ACCESS_KEY=
 After cloning the repository:
 
 - `cd os-cli`
-- `cp ./env/.env.development ./env`
+- `cp ./env/.env.development .env`
 - `docker compose up -d`
 - `pnpm install`
 
@@ -128,4 +128,3 @@ I personally prefer build in a terminal window and run the compiled version in a
 ## License
 
 os-cli [MIT licensed](LICENSE).
-
