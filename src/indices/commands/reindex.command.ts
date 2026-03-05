@@ -32,15 +32,15 @@ export class ReIndexCommand extends CommandRunner {
   }
 
   @Option({
-    flags: '-s, --slices, <string>',
-    description: 'number of slices for parallel reindexing (or "auto")',
+    flags: '-s, --slices, [string]',
+    description: 'number of slices for parallel reindexing (number or "auto")',
   })
   parseSlices(val: string): number | 'auto' {
     return val === 'auto' ? 'auto' : parseInt(val, 10);
   }
 
   @Option({
-    flags: '-rps, --requests-per-second, <number>',
+    flags: '-rps, --requests-per-second, [number]',
     description: 'throttle reindex requests per second',
   })
   parseRequestsPerSecond(val: string): number {
@@ -48,7 +48,7 @@ export class ReIndexCommand extends CommandRunner {
   }
 
   @Option({
-    flags: '-md, --max-docs, <number>',
+    flags: '-md, --max-docs, [number]',
     description: 'maximum number of documents to reindex',
   })
   parseMaxDocs(val: string): number {
@@ -56,7 +56,7 @@ export class ReIndexCommand extends CommandRunner {
   }
 
   @Option({
-    flags: '-bs, --batch-size, <number>',
+    flags: '-bs, --batch-size, [number]',
     description: 'number of documents per scroll batch',
   })
   parseBatchSize(val: string): number {

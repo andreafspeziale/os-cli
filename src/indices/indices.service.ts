@@ -79,9 +79,9 @@ export class IndicesService {
         }),
         ...(options.maxDocs !== undefined && { max_docs: options.maxDocs }),
         body: {
+          ...(options.batchSize !== undefined && { size: options.batchSize }),
           source: {
             index: options.index,
-            ...(options.batchSize !== undefined && { size: options.batchSize }),
           },
           dest: {
             index: options.targetIndex,
