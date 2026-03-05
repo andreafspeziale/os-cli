@@ -45,7 +45,7 @@ jobs:
       - name: Set registry
         run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.CI_NPM_TOKEN }}
       - name: Release
-        run: pnpm release
+        run: pnpm release --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update develop
