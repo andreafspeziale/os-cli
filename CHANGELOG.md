@@ -1,4 +1,59 @@
+# Changelog
 
+## [1.10.0](https://github.com/andreafspeziale/os-cli/compare/1.9.0...1.10.0) (2026-03-05)
+
+### Features
+
+* add exists document command ([71feb7c](https://github.com/andreafspeziale/os-cli/commit/71feb7cc2fc14d6ca858ce4003bca07161f5e687))
+* add get document command ([9f63464](https://github.com/andreafspeziale/os-cli/commit/9f63464b3fc036f8a45a1cb6a141de9ce1ce33f4))
+* add slices, requests-per-second, max-docs, and batch-size options to reindex command ([272b180](https://github.com/andreafspeziale/os-cli/commit/272b1802e49d2762800a7269a3c49cef9becf488))
+* add zod validation for reindex optional numeric options ([902b300](https://github.com/andreafspeziale/os-cli/commit/902b300fe20fd98a85c469d9e04048c88b7fd3de))
+* analyze command ([7fe4317](https://github.com/andreafspeziale/os-cli/commit/7fe431720175a7d9c7e6093ac773035b035fb809))
+
+### Bug Fixes
+
+* fix release workflow and upgrade release-it to v19 ([2455a3f](https://github.com/andreafspeziale/os-cli/commit/2455a3f73466bd9efb8cb316cc787ea6ce8220b2))
+* properly bubble up errors from CLI bootstrap ([ffdecfa](https://github.com/andreafspeziale/os-cli/commit/ffdecfa14f03cc23689ec4739f1a40a452693805))
+* remove incorrect analyzer default and fix analyze success log message ([091d235](https://github.com/andreafspeziale/os-cli/commit/091d23557f78fbdc19fba1733fedb99e8fd0e793))
+* update dependency @aws-sdk/credential-providers to v3.772.0 ([ee279b9](https://github.com/andreafspeziale/os-cli/commit/ee279b97abbb7c28c7a702d2cf7d8f78310ee566))
+* update dependency @aws-sdk/credential-providers to v3.775.0 ([416dae6](https://github.com/andreafspeziale/os-cli/commit/416dae6d4cf9ba6be022f738cf50a298fc40bfa1))
+* update dependency @aws-sdk/credential-providers to v3.778.0 ([c4edfd6](https://github.com/andreafspeziale/os-cli/commit/c4edfd62a8bae09fed06e295c1d7e360f2ebf19a))
+* use correct flag type labels for optional options and fix reindex body size placement ([c6eea19](https://github.com/andreafspeziale/os-cli/commit/c6eea1993665b9c6c03c9bd2be98abd329f9326c))
+
+### Miscellaneous
+
+* automerge all type of deps when minor and patch ([99489fd](https://github.com/andreafspeziale/os-cli/commit/99489fdb136dd58a035980021fead3f48f1fa51d))
+* bump @types/node to 24.x and tsconfig target to ES2024 ([9e4a991](https://github.com/andreafspeziale/os-cli/commit/9e4a9914fe4a2e540dd7f7ab05940154dc8a7f34))
+* recreate lock file ([a4c7081](https://github.com/andreafspeziale/os-cli/commit/a4c7081cbb27fc74e655aa7622517f058cb7cb4f))
+* simplify renovate config automerge strategy ([9ef93e6](https://github.com/andreafspeziale/os-cli/commit/9ef93e6875d0e527df5f335463afaa18cb822ddd))
+* update dependency @aws-sdk/credential-providers to v3.1002.0 ([4406777](https://github.com/andreafspeziale/os-cli/commit/4406777405b76152659de38ded8eadd5698157ce))
+* update dependency @aws-sdk/credential-providers to v3.1003.0 ([72581f1](https://github.com/andreafspeziale/os-cli/commit/72581f18a53b703fd83fd1582e97c0888a00550f))
+* update dependency @types/node to v22.13.11 ([d805fa1](https://github.com/andreafspeziale/os-cli/commit/d805fa115eb99cce946cd4b3a6fcb6f44296a652))
+* update dependency @types/node to v22.13.13 ([220346e](https://github.com/andreafspeziale/os-cli/commit/220346e6825bf4a2d9209177ab71dc357c5b4145))
+* update dependency @types/node to v22.13.14 ([f676524](https://github.com/andreafspeziale/os-cli/commit/f6765240f3646e517db28d9517d2208631ff274c))
+* update dependency @types/node to v22.19.13 ([fe741a7](https://github.com/andreafspeziale/os-cli/commit/fe741a7c337ce53c0d4c859f5c1b6a41d805bb6f))
+* update dependency @types/supertest to v6.0.3 ([59908b1](https://github.com/andreafspeziale/os-cli/commit/59908b10819367211ddf427cb7cff98e39f2606b))
+* update dependency eslint-plugin-prettier to v5.2.5 ([52492f7](https://github.com/andreafspeziale/os-cli/commit/52492f796b245533af465afdbbdae77373405add))
+* update dependency eslint-plugin-prettier to v5.5.5 ([85bc2b2](https://github.com/andreafspeziale/os-cli/commit/85bc2b285408319c201258571ed751308034915d))
+* update dependency eslint-plugin-unused-imports to v4.4.1 ([1af0066](https://github.com/andreafspeziale/os-cli/commit/1af0066e31e921b70b02470ba740a7ea98559191))
+* update dependency eslint-plugin-unused-imports to v4.4.1 ([9825921](https://github.com/andreafspeziale/os-cli/commit/98259218f7e5f7a9ab92dfb986806cbdece3fe22))
+* update dependency prettier to v3.8.1 ([f09935f](https://github.com/andreafspeziale/os-cli/commit/f09935f9802ed30ae68faa3e7860f045845b8478))
+* update dependency prettier to v3.8.1 ([d7e8701](https://github.com/andreafspeziale/os-cli/commit/d7e87014266fde62c0a712c23cb74508e000e9c9))
+* update dependency supertest to v7.1.0 ([f8fc0ce](https://github.com/andreafspeziale/os-cli/commit/f8fc0ce20b84e92e8337dbb252b293c58fc85018))
+* update dependency supertest to v7.2.2 ([4feb468](https://github.com/andreafspeziale/os-cli/commit/4feb46809e9784500b49f0843d7dc6ad6c14f1d8))
+* update dependency ts-jest to v29.3.0 ([d00c8b3](https://github.com/andreafspeziale/os-cli/commit/d00c8b3060cf1c2f6c6b19b0366a837b34acd21c))
+* update dependency ts-jest to v29.4.6 ([be08e72](https://github.com/andreafspeziale/os-cli/commit/be08e7283ea744be14255e187f6b772472b16b74))
+* update dependency ts-jest to v29.4.6 ([54d935b](https://github.com/andreafspeziale/os-cli/commit/54d935b63ce7647d5f54669ff01ee9917e7c4dba))
+* update dependency typescript-eslint to v8.28.0 ([d8c2b4d](https://github.com/andreafspeziale/os-cli/commit/d8c2b4d5571b73ee18952d101d131eff67253816))
+* update dependency typescript-eslint to v8.56.1 ([853b7a4](https://github.com/andreafspeziale/os-cli/commit/853b7a4d91006f5b5b495a47e32028384d0b3639))
+* update dependency typescript-eslint to v8.56.1 ([a9ea558](https://github.com/andreafspeziale/os-cli/commit/a9ea558dd916aee808f9f318662ea8f7e19079d2))
+* update eslint monorepo to v9.23.0 ([18394f4](https://github.com/andreafspeziale/os-cli/commit/18394f4a233eab3df992d52ee3c6035c924ed559))
+* update eslint monorepo to v9.39.3 ([109467c](https://github.com/andreafspeziale/os-cli/commit/109467cf558f1cfa58704de8a5622ae90ace24cb))
+* update nest monorepo ([b502600](https://github.com/andreafspeziale/os-cli/commit/b502600b9e76a22bd21c14b523005026ca143922))
+* update nest monorepo ([9fc14dd](https://github.com/andreafspeziale/os-cli/commit/9fc14ddcddc59f000d97e2342302298ac7b7a9a6))
+* update node.js to v22.22.0 ([1142a9e](https://github.com/andreafspeziale/os-cli/commit/1142a9e40956b5a98caf72e9eca87c9d630048f5))
+* update pnpm/action-setup version to 10 in release workflow ([6e736ae](https://github.com/andreafspeziale/os-cli/commit/6e736aebd1f5ee4b312ce932f66fa38d12acb9b8))
+* upgrade nodejs to 24.14.0 and pnpm to 10.30.3 ([9e15fe9](https://github.com/andreafspeziale/os-cli/commit/9e15fe9481fda07b49ab1f380052d31f0f3e55be))
 
 ## [1.9.0](https://github.com/andreafspeziale/os-cli/compare/1.8.1...1.9.0) (2025-03-20)
 
