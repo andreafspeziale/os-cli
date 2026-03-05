@@ -1,5 +1,7 @@
+import { z } from 'zod';
 import { SubCommand, CommandRunner, Option, InquirerService } from 'nest-commander';
 import { LoggerService } from '@andreafspeziale/nestjs-log';
+import { validateAndParseOrExit } from '../../common';
 import { IndicesService } from '../indices.service';
 
 @SubCommand({ name: 'reindex', description: 'reindex docs', aliases: ['ri'] })
@@ -36,7 +38,11 @@ export class ReIndexCommand extends CommandRunner {
     description: 'number of slices for parallel reindexing (number or "auto")',
   })
   parseSlices(val: string): number | 'auto' {
-    return val === 'auto' ? 'auto' : parseInt(val, 10);
+    return validateAndParseOrExit(
+      val,
+      z.union([z.literal('auto'), z.coerce.number().int().positive()]),
+      this.logger,
+    );
   }
 
   @Option({
@@ -44,7 +50,7 @@ export class ReIndexCommand extends CommandRunner {
     description: 'throttle reindex requests per second',
   })
   parseRequestsPerSecond(val: string): number {
-    return parseInt(val, 10);
+    return validateAndParseOrExit(val, z.coerce.number().int().positive(), this.logger);
   }
 
   @Option({
@@ -52,7 +58,7 @@ export class ReIndexCommand extends CommandRunner {
     description: 'maximum number of documents to reindex',
   })
   parseMaxDocs(val: string): number {
-    return parseInt(val, 10);
+    return validateAndParseOrExit(val, z.coerce.number().int().positive(), this.logger);
   }
 
   @Option({
@@ -60,7 +66,7 @@ export class ReIndexCommand extends CommandRunner {
     description: 'number of documents per scroll batch',
   })
   parseBatchSize(val: string): number {
-    return parseInt(val, 10);
+    return validateAndParseOrExit(val, z.coerce.number().int().positive(), this.logger);
   }
 
   async run(
