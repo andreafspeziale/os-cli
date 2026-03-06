@@ -14,11 +14,11 @@ importers:
   .:
     dependencies:
       '@andreafspeziale/nestjs-log':
-        specifier: ^1.2.0
-        version: 1.2.0(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)(zod@3.25.76)
+        specifier: ^1.2.1
+        version: 1.2.1(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)(zod@3.25.76)
       '@andreafspeziale/nestjs-search':
-        specifier: ^2.0.0
-        version: 2.0.0(@aws-sdk/credential-providers@3.1003.0)(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@3.25.76)
+        specifier: ^2.0.1
+        version: 2.0.1(@aws-sdk/credential-providers@3.1003.0)(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@3.25.76)
       '@aws-sdk/credential-providers':
         specifier: ^3.1003.0
         version: 3.1003.0
@@ -134,15 +134,15 @@ importers:
 
 packages:
 
-  '@andreafspeziale/nestjs-log@1.2.0':
-    resolution: {integrity: sha512-g5yb7v6DeomE+RgHBL6aPEDI6dq5hC/rlozXr24BQy0drNF8MjXY5o1OYhqOc0t25dcyMwj2GZLvw2Ct+1CHEw==}
+  '@andreafspeziale/nestjs-log@1.2.1':
+    resolution: {integrity: sha512-xeCiU+5bvFOk7G94AWHATg+wxlzo21/eSX4tZFiJJJHUDGItLiIdGlPW6Odgx6Vp1Pb7PSU2FVhyP+EIZcUkYw==}
     engines: {node: '>=20.16.0'}
     peerDependencies:
       '@nestjs/common': ^10.0.0 || ^11.0.0
       '@nestjs/platform-express': ^10.0.0 || ^11.0.0
       '@nestjs/platform-fastify': ^10.0.0 || ^11.0.0
       class-transformer: ^0.5.1
-      class-validator: ^0.14.1
+      class-validator: ^0.14.1 || ^0.15.0
       joi: ^17.13.3
       reflect-metadata: ^0.2.2
       rxjs: ^7.8.1
@@ -163,8 +163,8 @@ packages:
       zod:
         optional: true
 
-  '@andreafspeziale/nestjs-search@2.0.0':
-    resolution: {integrity: sha512-RPdKbK/LZGxnFe9yf6GBRS7eJ10mRW+9NOkB/3HaP06M927NIrmnSqxJrSdW6ffquTjRhmu1BQIzSkadfRDqbg==}
+  '@andreafspeziale/nestjs-search@2.0.1':
+    resolution: {integrity: sha512-T5iEAE9zFwM1tJ7Z/7BoNrz7AvJ1/h1Dbita9Hmhjd6n2Jxx7dC/T7ZTdWFSKqnxuLZPfdD/v5UwikLjrTy0ig==}
     engines: {node: '>=20.16.0'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.629.0
@@ -4519,7 +4519,7 @@ packages:
 
 snapshots:
 
-  '@andreafspeziale/nestjs-log@1.2.0(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)(zod@3.25.76)':
+  '@andreafspeziale/nestjs-log@1.2.1(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)(zod@3.25.76)':
     dependencies:
       '@nestjs/common': 11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2)
       cls-rtracer: 2.6.3
@@ -4529,7 +4529,7 @@ snapshots:
       rxjs: 7.8.2
       zod: 3.25.76
 
-  '@andreafspeziale/nestjs-search@2.0.0(@aws-sdk/credential-providers@3.1003.0)(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@3.25.76)':
+  '@andreafspeziale/nestjs-search@2.0.1(@aws-sdk/credential-providers@3.1003.0)(@nestjs/common@11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@3.25.76)':
     dependencies:
       '@nestjs/common': 11.1.16(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@opensearch-project/opensearch': 3.5.1

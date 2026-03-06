@@ -45,8 +45,8 @@
     "release": "release-it --ci"
   },
   "dependencies": {
-    "@andreafspeziale/nestjs-log": "^1.2.0",
-    "@andreafspeziale/nestjs-search": "^2.0.0",
+    "@andreafspeziale/nestjs-log": "^1.2.1",
+    "@andreafspeziale/nestjs-search": "^2.0.1",
     "@aws-sdk/credential-providers": "^3.1003.0",
     "@nestjs/common": "^11.1.16",
     "@nestjs/config": "^4.0.3",
