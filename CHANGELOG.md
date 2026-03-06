@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.10.1](https://github.com/andreafspeziale/os-cli/compare/1.10.0...1.10.1) (2026-03-06)
+
+### Miscellaneous
+
+* update dependency @types/node to v24.11.2 ([8646bf4](https://github.com/andreafspeziale/os-cli/commit/8646bf4545e23cfb5c8e7ebbaa35d2ecebfa82e0))
+* update dependency @types/node to v24.12.0 ([be158f6](https://github.com/andreafspeziale/os-cli/commit/be158f68c4b684f8c3b0f537b8fd40a3e22a89f8))
+* update dependency @types/node to v24.12.0 ([eb08a5a](https://github.com/andreafspeziale/os-cli/commit/eb08a5a59289b69aacf39eb7c15ec94a32913932))
+* upgrade commitlint to v20 ([d3c0211](https://github.com/andreafspeziale/os-cli/commit/d3c021182e2885c3bb488ec9a95fa595c3c7772f))
+* upgrade jest to v30 and @types/jest to v30 ([6221532](https://github.com/andreafspeziale/os-cli/commit/622153287bff7df894a43a204a0f1e07b1f12d2f))
+* upgrade lint-staged to v16 ([a6d60d3](https://github.com/andreafspeziale/os-cli/commit/a6d60d3fb9ee2ce605a662228fb7da3339068522))
+* upgrade minor/patch dependencies and fix vulnerabilities ([2b5382f](https://github.com/andreafspeziale/os-cli/commit/2b5382f917451f24152a6f106ccb0606cc266d93))
+
 ## [1.10.0](https://github.com/andreafspeziale/os-cli/compare/1.9.0...1.10.0) (2026-03-05)
 
 ### Features
