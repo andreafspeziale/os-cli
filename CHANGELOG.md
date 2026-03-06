@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.10.3](https://github.com/andreafspeziale/os-cli/compare/1.10.2...1.10.3) (2026-03-06)
+
+### Miscellaneous
+
+* update nestjs-log to v1.2.1 and nestjs-search to v2.0.1 ([41f4cd1](https://github.com/andreafspeziale/os-cli/commit/41f4cd1523151dc6e460290804f163c09701acec))
+
 ## [1.10.2](https://github.com/andreafspeziale/os-cli/compare/1.10.1...1.10.2) (2026-03-06)
 
 ### Miscellaneous
