@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.10.2](https://github.com/andreafspeziale/os-cli/compare/1.10.1...1.10.2) (2026-03-06)
+
+### Miscellaneous
+
+* enable npm publish in release-it config ([c4c3cee](https://github.com/andreafspeziale/os-cli/commit/c4c3ceed4d6a1e8afda646cf6277ddf5ac5d9f29))
+
 ## [1.10.1](https://github.com/andreafspeziale/os-cli/compare/1.10.0...1.10.1) (2026-03-06)
 
 ### Miscellaneous
